@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+  <title>Liên hệ</title>
+  <style>
+    :root {
+      --accent: #000000;
+      --text: #111;
+      --bg: #fff;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: #f9f9f9;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-section h1 {
+      color: var(--accent);
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+   .contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 thẻ trên 1 hàng */
+  gap: 30px;
+}
+
+.contact-card {
+  background: #fff;
+  border: 2px solid #fdf001;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* chiều cao cố định, tất cả thẻ bằng nhau */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+    .contact-card h3 {
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <div id="navbar"></div>
+    <script>
+        fetch("navbar.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("navbar").innerHTML = html);
+    </script>
+
+  <section class="contact-section">
+     <h1 class="display-5">Liên hệ với chúng tôi</h1>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@sotagroup.vn</p>
+    </div>
+    <div class="contact-card">
+      <h3>Số điện thoại</h3>
+      <p>0939.857.111</p>
+    </div>
+    <div class="contact-card">
+      <h3>Địa chỉ</h3>
+      <p>60 Đường số 1, KDC Cityland Park Hills, P.Gò Vấp, TP. HCM</p>
+    </div>
+    <div class="contact-card">
+      <h3>Fanpage</h3>
+      <p>facebook.com/sotagroup</p>
+    </div>
+    <div class="contact-card">
+      <h3>Zalo</h3>
+      <p>0985.528.427</p>
+    </div>
+    <div class="contact-card">
+      <h3>Hỗ trợ trực tuyến</h3>
+      <p>sotagroup.vn</p>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("footer").innerHTML = html);
+    </script>
+
+     <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<!--tuyết rới-->
+    <img id="santa" src="https://clipart-library.com/2024/picture-of-cartoon-santa/picture-of-cartoon-santa-3.png"
+        alt="Santa Claus">
+    <canvas id="snowCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let W = window.innerWidth;
+        let H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+
+        // Tạo mảng tuyết
+        let mf = 150; // số lượng bông tuyết
+        let flakes = [];
+        for (let i = 0; i < mf; i++) {
+            flakes.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 4 + 1,
+                d: Math.random() * mf
+            });
+        }
+
+        // Vị trí Santa
+        let santa = {
+            x: 20,
+            y: H - 100,
+            width: 80,
+            height: 80,
+            offset: 0,
+            dir: 1
+        };
+
+        // Vẽ bông tuyết + Santa
+        function drawFlakes() {
+            ctx.clearRect(0, 0, W, H);
+
+            // Vẽ tuyết
+            ctx.fillStyle = "white";
+            ctx.beginPath();
+            for (let i = 0; i < mf; i++) {
+                let f = flakes[i];
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+            }
+            ctx.fill();
+            moveFlakes();
+
+            // Vẽ Santa nhún nhẹ
+            if (santaImg.complete) { // đảm bảo ảnh tải xong
+                santa.offset += 0.5 * santa.dir;
+                if (santa.offset > 5 || santa.offset < 0) santa.dir *= -1;
+                ctx.drawImage(santaImg, santa.x, santa.y - santa.offset, santa.width, santa.height);
+            }
+        }
+
+        // Di chuyển bông tuyết
+        let angle = 0;
+        function moveFlakes() {
+            angle += 0.01;
+            for (let i = 0; i < mf; i++) {
+                let f = flakes[i];
+                f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
+                f.x += Math.sin(angle) * 2;
+
+                if (f.x > W + 5 || f.x < -5 || f.y > H) {
+                    if (i % 3 > 0) {
+                        flakes[i] = { x: Math.random() * W, y: -10, r: f.r, d: f.d };
+                    } else {
+                        if (Math.sin(angle) > 0) {
+                            flakes[i] = { x: -5, y: Math.random() * H, r: f.r, d: f.d };
+                        } else {
+                            flakes[i] = { x: W + 5, y: Math.random() * H, r: f.r, d: f.d };
+                        }
+                    }
+                }
+            }
+        }
+
+        // Animate
+        setInterval(drawFlakes, 25);
+
+        // Resize canvas khi đổi kích thước màn hình
+        window.addEventListener('resize', () => {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+            santa.y = H - 100; // cập nhật vị trí Santa
+        });
+    </script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

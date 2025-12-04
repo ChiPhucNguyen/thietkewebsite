@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Thiết kế Website - Sota Group</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    .blog-item img {
+        height: 120px;
+        /* chiều cao cố định cho tất cả */
+        object-fit: contain;
+        /* hiển thị toàn bộ logo, không cắt */
+        padding: 10px;
+        /* tạo khoảng cách đẹp */
+        background: #fff;
+        /* nền trắng cho đều */
+    }
+
+    .services-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .services-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .services-item .content {
+        margin-top: auto;
+        /* giữ nút luôn dưới cùng */
+    }
+</style>
+
+<body>
+
+
+
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+    <script>
+        fetch("navbar.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("navbar").innerHTML = html);
+    </script>
+    <!-- Carousel Start -->
+    <div class="container-fluid carousel px-0 mb-5 pb-5">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="First slide"></li>
+                <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img src="https://sotagroup.vn/upload/photo/slider-chuan-1-7670.png" class="img-fluid w-100"
+                        alt="First slide">
+                    <div class="carousel-caption">
+                        <div class="container carousel-content">
+                            <h4 class="text-white mb-4 animated slideInDown">Sota Group chúng tôi mang đến</h4>
+                            <h1 class="text-white display-1 mb-4 animated slideInDown">Giải pháp website trọn gói
+                                cho
+                                mọi doanh nghiệp.</h1>
+                            <a href="" class="me-2"><button type="button"
+                                    class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Xem
+                                    thêm</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://sotagroup.vn/upload/photo/banner-fb-1-37480-min-5617-1178.png"
+                        class="img-fluid w-100" alt="Second slide">
+                    <div class="carousel-caption">
+                        <div class="container carousel-content">
+                            <h4 class="text-white mb-4 animated slideInDown">BẮT ĐẦU KINH DOANH ONLINE</h4>
+                            <h1 class="text-white display-1 mb-4 animated slideInDown">Tìm và đăng ký một Website
+                                phù hợp tại Sota
+                            </h1>
+                            <a href="" class="me-2"><button type="button"
+                                    class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Xem
+                                    thêm</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev btn btn-primary border border-2 border-start-0 border-primary"
+                type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next btn btn-primary border border-2 border-end-0 border-primary"
+                type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- Get In Touch Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay=".3s">
+        <div class="container py-5">
+            <div class="bg-light px-4 py-5 rounded">
+                <div class="text-center">
+                    <h1 class="display-5 mb-5">Tư Vấn Thiết Kế Website Chuyên Nghiệp</h1>
+                </div>
+                <form class="text-center mb-4" action="#">
+                    <div class="row g-4">
+                        <div class="col-xl-10 col-lg-12">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-xl-3">
+                                    <select class="form-select p-3 border-0">
+                                        <option value="Type Of Service" class="">Loại Website</option>
+                                        <option value="Pest Control-2">Website Doanh nghiệp</option>
+                                        <option value="Pest Control-3">Website Bán hàng</option>
+                                        <option value="Pest Control-4">Website Bất động sản</option>
+                                        <option value="Pest Control-5">Website Tin túc - Blog</option>
+                                        <option value="Pest Control-5">Website Spa - Thẩm mỹ</option>
+                                        <option value="Pest Control-5">Web site Nhà hàng - Khách sạn</option>
+                                        <option value="Pest Control-5">Website Cá nhân / Portfolio</option>
+                                        <option value="Pest Control-5">Website Giáo dục - Trung tâm</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <input type="text" class="form-control p-3 border-0" placeholder="Họ và tên">
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <input type="text" class="form-control p-3 border-0" placeholder="Số điện thoại">
+                                </div>
+                                <div class="col-md-6 col-xl-3">
+                                    <input type="email" class="form-control p-3 border-0" placeholder="Email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-12">
+                            <input type="button" class="btn btn-primary w-100 p-3 border-0" value="Tư vấn ngay">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Get In Touch End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="about-img">
+                        <div class="rotate-left"></div>
+                        <div class="rotate-right"></div>
+                        <img src="https://lean6sigma.edu.vn/FileUploads/tai-sao-phai-lam-viec-theo-quy-trinh.jpg"
+                            class="img-fluid h-100" alt="img">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="about-item overflow-hidden">
+                        <h1 class="display-5 mb-2">Quy trình thiết kế Website</h1>
+                        <p class="fs-5" style="text-align: justify;">Công ty chúng tôi xây dựng quy trình thiết kế
+                            website rõ ràng và hiệu quả, giúp khách hàng sở hữu một sản phẩm chất lượng trong thời
+                            gian
+                            ngắn nhất.</p>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-lightbulb fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>KHÁM PHÁ & KÝ KẾT</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-drafting-compass fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>THIẾT KẾ CONCEPT</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-code fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>PHÁT TRIỂN FRONT - BACK END</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-search fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>KIỂM THỬ LIÊN TỤC</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-box-open fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>BÀN GIAO & NGHIỆM THU</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-center">
+                                    <div class="p-4 bg-dark rounded d-flex"
+                                        style="align-items: center; justify-content: center;">
+                                        <i class="fas fa-sync-alt fa-4x text-primary"></i>
+                                    </div>
+                                    <div class="my-2">
+                                        <h5>DUY TRÌ & MỞ RỘNG</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Services Start -->
+    <div class="container-fluid services py-5">
+        <div class="container text-center py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <h1 class="display-5">Thiết kế Website theo ngành nghề</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/thumb-5245.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Doanh nghiệp</h4>
+                            <a href="website_doanhnghiep.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/screencapture-dienlanhgiahien-vn-2025-11-19-165050-9009.jpg"
+                            alt="icon" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Bán hàng</h4>
+                            <a href="website_banhang.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/screencapture-showcase-ladi-me-64e47bb7685988001251f171-2025-12-02-162708-5597.jpg"
+                            alt="icon" style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Tin tức - Blog</h4>
+                            <a href="website_tintuc.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/nu-hoan-hai-yen-02-8287.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Spa - Thẩm mỹ</h4>
+                            <a href="website_spa.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/ls-tran-minh-cuong-6577.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Cá nhân</h4>
+                            <a href="website_canhan.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/thumb-5245.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Bất động sản</h4>
+                            <a href="website_batdongsan.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/giao-dien-web-trung-tam-anh-ngu-8356.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Giáo dục - Trung tâm</h4>
+                            <a href="website_giaoduc.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="bg-light rounded services-item" style="padding: 0;">
+
+                        <img src="https://sotagroup.vn/upload/news/thumb-5245.png" alt="icon"
+                            style="width: 100%; height: 250px; object-fit: cover; display: block;">
+
+                        <div class="content p-3">
+                            <h4>Website Nhà hàng - Khách sạn</h4>
+                            <a href="website_nhahang.html"><button type="button"
+                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    Xem thêm
+                                </button></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+    <!-- pricing Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Bảng
+                    giá</h5>
+                <h1 class="display-5 w-50 mx-auto">Báo giá dịch vụ thiết kế website</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-primary py-3 px-5 text-center rounded-top border-bottom border-dark">
+                            <h2 class="m-0">Cơ bản</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST1 - 20/100</span>
+                            </h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
+                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư
+                                vấn ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-dark py-3 px-5 text-center rounded-top border-bottom border-primary">
+                            <h2 class="m-0 text-primary">Tiêu chuẩn</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-dark pricing-label pricing-featured mb-2">
+                            <h1 class="mb-0 text-primary"><span class="fs-5 fw-normal">WEB ST2 - 70/100</span></h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
+                            <button type="button"
+                                class="btn btn-dark border-0 text-primary rounded-pill px-4 py-3 mt-3">Tư vấn
+                                ngay</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-primary py-3 px-5 text-center rounded-top border-bottom border-dark">
+                            <h2 class="m-0">Nâng cao</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST3 - 80/100</span>
+                            </h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hướng dẫn quản trị</p>
+                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư
+                                vấn ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <h1 class="display-5 w-50 mx-auto">Đội ngũ của Sota Group</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="rounded team-item">
+                        <img src="https://sotagroup.vn/thumbs/800x400x1/upload/news/z67765615382301e3fe3f9a2288735b84bf5c4d6274d54-5788.jpg"
+                            class="img-fluid w-100 rounded-top border border-bottom-0" alt="">
+                        <div class="team-content bg-primary text-dark text-center py-3">
+                            <span class="fs-4 fw-bold">Full Name</span>
+                            <p class="text-muted mb-0">Designation</p>
+                        </div>
+                        <div class="team-icon d-flex flex-column ">
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-primary border-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="rounded team-item">
+                        <img src="https://sotagroup.vn/thumbs/800x400x1/upload/news/z67765615382301e3fe3f9a2288735b84bf5c4d6274d54-5788.jpg"
+                            class="img-fluid w-100 rounded-top border border-bottom-0" alt="">
+                        <div class="team-content bg-primary text-dark text-center py-3">
+                            <span class="fs-4 fw-bold">Full Name</span>
+                            <p class="text-muted mb-0">Designation</p>
+                        </div>
+                        <div class="team-icon d-flex flex-column ">
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-primary border-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="rounded team-item">
+                        <img src="https://sotagroup.vn/thumbs/800x400x1/upload/news/z67765615382301e3fe3f9a2288735b84bf5c4d6274d54-5788.jpg"
+                            class="img-fluid w-100 rounded-top border border-bottom-0" alt="">
+                        <div class="team-content bg-primary text-dark text-center py-3">
+                            <span class="fs-4 fw-bold">Full Name</span>
+                            <p class="text-muted mb-0">Designation</p>
+                        </div>
+                        <div class="team-icon d-flex flex-column ">
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-primary border-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".9s">
+                    <div class="rounded team-item">
+                        <img src="https://sotagroup.vn/thumbs/800x400x1/upload/news/z67765615382301e3fe3f9a2288735b84bf5c4d6274d54-5788.jpg"
+                            class="img-fluid w-100 rounded-top border border-bottom-0" alt="">
+                        <div class="team-content bg-primary text-dark text-center py-3">
+                            <span class="fs-4 fw-bold">Full Name</span>
+                            <p class="text-muted mb-0">Designation</p>
+                        </div>
+                        <div class="team-icon d-flex flex-column ">
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="btn btn-primary border-0 mb-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="btn btn-primary border-0"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+    <!-- Blog Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <h1 class="display-5">Đối tác của chúng tôi</h1>
+            </div>
+
+            <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay=".5s">
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/iconslogo-01-1-5088-66500.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-10-coteccons-1-21420.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-12-deoca-28480.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-18-austdoor-98060.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-21-fecon-68280.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-24-uni-president-84450.png"
+                        alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/logo-8sangbds-7313.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/18805163-6921-6122.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+    <!-- Testiminial Start -->
+    <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <h1 class="display-5 w-50 mx-auto">Cảm nhận của khách hàng</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay=".5s">
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testiminial End -->
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <script>
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(html => document.getElementById("footer").innerHTML = html);
+    </script>
+
+
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+    <!--tuyết rới-->
+    <img id="santa" src="https://clipart-library.com/2024/picture-of-cartoon-santa/picture-of-cartoon-santa-3.png"
+        alt="Santa Claus">
+    <canvas id="snowCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let W = window.innerWidth;
+        let H = window.innerHeight;
+        canvas.width = W;
+        canvas.height = H;
+
+        // Tạo mảng tuyết
+        let mf = 150; // số lượng bông tuyết
+        let flakes = [];
+        for (let i = 0; i < mf; i++) {
+            flakes.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                r: Math.random() * 4 + 1,
+                d: Math.random() * mf
+            });
+        }
+
+        // Vị trí Santa
+        let santa = {
+            x: 20,
+            y: H - 100,
+            width: 80,
+            height: 80,
+            offset: 0,
+            dir: 1
+        };
+
+        // Vẽ bông tuyết + Santa
+        function drawFlakes() {
+            ctx.clearRect(0, 0, W, H);
+
+            // Vẽ tuyết
+            ctx.fillStyle = "white";
+            ctx.beginPath();
+            for (let i = 0; i < mf; i++) {
+                let f = flakes[i];
+                ctx.moveTo(f.x, f.y);
+                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+            }
+            ctx.fill();
+            moveFlakes();
+
+            // Vẽ Santa nhún nhẹ
+            if (santaImg.complete) { // đảm bảo ảnh tải xong
+                santa.offset += 0.5 * santa.dir;
+                if (santa.offset > 5 || santa.offset < 0) santa.dir *= -1;
+                ctx.drawImage(santaImg, santa.x, santa.y - santa.offset, santa.width, santa.height);
+            }
+        }
+
+        // Di chuyển bông tuyết
+        let angle = 0;
+        function moveFlakes() {
+            angle += 0.01;
+            for (let i = 0; i < mf; i++) {
+                let f = flakes[i];
+                f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
+                f.x += Math.sin(angle) * 2;
+
+                if (f.x > W + 5 || f.x < -5 || f.y > H) {
+                    if (i % 3 > 0) {
+                        flakes[i] = { x: Math.random() * W, y: -10, r: f.r, d: f.d };
+                    } else {
+                        if (Math.sin(angle) > 0) {
+                            flakes[i] = { x: -5, y: Math.random() * H, r: f.r, d: f.d };
+                        } else {
+                            flakes[i] = { x: W + 5, y: Math.random() * H, r: f.r, d: f.d };
+                        }
+                    }
+                }
+            }
+        }
+
+        // Animate
+        setInterval(drawFlakes, 25);
+
+        // Resize canvas khi đổi kích thước màn hình
+        window.addEventListener('resize', () => {
+            W = window.innerWidth;
+            H = window.innerHeight;
+            canvas.width = W;
+            canvas.height = H;
+            santa.y = H - 100; // cập nhật vị trí Santa
+        });
+    </script>
+
+
+
+</body>
+
+</html>
