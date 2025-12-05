@@ -26,324 +26,7 @@
   <link href="css/style.css" rel="stylesheet">
   <title>Website Bán Hàng Chuyên Nghiệp</title>
 
-  <style>
-    :root {
-      --accent: #fdf001;
-      --bg: #f2f2f2;
-      --text: #111;
-      --card: #ffffff;
-      --radius: 12px;
-      --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      --gradient: linear-gradient(135deg, #2b58df, #83b2d1);
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Inter, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    /* BUTTON */
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: 600;
-      margin-right: 10px;
-      text-decoration: none;
-      transition: .25s;
-    }
-
-    .btn-yellow {
-      background: var(--accent);
-      color: #000;
-    }
-
-    .btn-dark {
-      background: #000;
-      color: #fff;
-    }
-
-    .btn:hover {
-      opacity: 0.85;
-    }
-
-    /* HERO */
-    .hero-wrapper {
-      width: 100%;
-      background: var(--gradient);
-      padding: 70px 0;
-    }
-
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      flex-wrap: wrap;
-      color: white;
-    }
-
-    .hero-left,
-    .hero-right {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .hero-right img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    /* SECTIONS */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-
-
-    p {
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    /* CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      /* Luôn 3 thẻ mỗi hàng */
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 180px;
-      /* Chiều cao đồng đều */
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-      color: var(--text);
-    }
-
-    /* PROJECTS */
-    .project-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      text-decoration: none;
-      color: var(--text);
-      box-shadow: var(--shadow);
-      transition: 0.3s;
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .project-card h3 {
-      text-align: center;
-      padding: 15px 0;
-      font-size: 18px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-    }
-
-    @media (max-width: 1024px) {
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 thẻ trên tablet */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        text-align: center;
-        flex-direction: column;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-        /* 1 thẻ trên mobile */
-      }
-    }
-
-    /*thiết kế web theo yêu cầu*/
-
-    .container-two-col {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: center;
-      padding: 10px 20px;
-    }
-
-    .req-left h2 {
-      color: var(--accent);
-      font-size: 30px;
-      margin-bottom: 18px;
-    }
-
-    .req-list {
-      list-style: none;
-      display: grid;
-      gap: 18px;
-      margin-bottom: 22px;
-    }
-
-    .req-list li {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      background: var(--card);
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      transition: transform .25s, box-shadow .25s;
-    }
-
-    .req-list li:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .req-icon {
-      min-width: 48px;
-      min-height: 48px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(255, 204, 0, 0.12), rgba(43, 88, 223, 0.06));
-      color: var(--accent);
-      font-size: 20px;
-    }
-
-    .req-text h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
-
-    .req-text p {
-      margin: 0;
-      color: #444;
-      line-height: 1.5;
-    }
-
-    .req-cta {
-      margin-top: 12px;
-    }
-
-    .req-right img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      display: block;
-      transition: transform .35s;
-    }
-
-    .req-right img:hover {
-      transform: scale(1.02);
-    }
-
-    /* responsive */
-    @media (max-width: 900px) {
-      .container-two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .req-right {
-        order: -1;
-        /* đặt hình trên cùng nếu muốn */
-      }
-    }
-
-
-    .why-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .why-title {
-      font-size: 32px;
-      color: var(--accent);
-      margin-bottom: 32px;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-    }
-
-    .why-item {
-      background: var(--card);
-      padding: 28px 20px;
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      transition: .25s;
-    }
-
-    .why-item:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .why-icon {
-      font-size: 35px;
-      color: var(--accent);
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-
-    .why-item h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: #111;
-    }
-
-    .why-item p {
-      color: #555;
-      line-height: 1.5;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -384,89 +67,144 @@
     </div>
   </div>
   <!-- Carousel End -->
-  <!-- Ưu điểm Start -->
-  <div class="container-fluid py-5">
-  <div class="container py-5">
-    <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-      <h1 class="display-5 w-50 mx-auto">Ưu điểm dịch vụ</h1>
-    </div>
-    <div class="row g-5">
-      <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Quản lý đơn hàng dễ dàng</span>
-        
-          </div>
-        </div>
-      </div>
-      <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Thiết kế chuẩn SEO</span>
-           
-          </div>
-        </div>
-      </div>
-      <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Responsive hiện đại</span>
-   
-          </div>
-        </div>
-      </div>
-      <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Tích hợp thanh toán</span>
+  <!-- Services Start -->
+  <div class="container-fluid py-5 lux-service-section">
+    <div class="container py-5">
 
-          </div>
+      <div class="text-center mb-5">
+        <div class="text-center">
+          <h2 class="lux-title">
+            <span>Ưu điểm dịch vụ</span>
+          </h2>
         </div>
       </div>
-        <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Hỗ trợ đa ngôn ngữ</span>
-   
-          </div>
-        </div>
-      </div>
-       <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Bảo mật ổn định</span>
-     
-          </div>
-        </div>
-      </div>
-       <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Báo cáo và thống kê chính xác</span>
-  
-          </div>
-        </div>
-      </div>
-       <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp d-flex" data-wow-delay=".3s">
-        <div class="rounded team-item w-100 h-100 d-flex flex-column">
-          <div class="team-content bg-primary text-dark text-center py-3 flex-fill d-flex flex-column justify-content-center">
-            <span class="fs-4 fw-bold">Tiết kiệm chi phí và thời gian</span>
 
+      <div class="row g-4">
+
+        <!-- Service 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">WD</span>
+            </div>
+            <h3 class="lux-card-title">Giao diện sang trọng</h3>
+            <p class="lux-card-text">
+              Thiết kế hiện đại, tinh tế giúp thương hiệu nổi bật ngay từ giây đầu tiên. <br> <br>
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">FAST</span>
+            </div>
+            <h3 class="lux-card-title">Tốc độ nhanh mượt</h3>
+            <p class="lux-card-text">
+              Mở trang gần như tức thì, mang lại trải nghiệm mua sắm liền mạch. <br><br>
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">RPS</span>
+            </div>
+            <h3 class="lux-card-title">Hiển thị hoàn hảo trên mọi thiết bị</h3>
+            <p class="lux-card-text">
+              Dù xem bằng điện thoại, máy tính hay tablet, giao diện chuẩn chỉnh.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">PAY</span>
+            </div>
+            <h3 class="lux-card-title">Giỏ hàng & thanh toán tiện lợi</h3>
+            <p class="lux-card-text">
+              Khách hàng mua sắm dễ dàng chỉ với vài thao tác đơn giản..
+            </p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">SEO</span>
+            </div>
+            <h3 class="lux-card-title">Chuẩn SEO – tăng lượng truy cập tự nhiên</h3>
+            <p class="lux-card-text">
+              Giúp sản phẩm của bạn tiếp cận khách hàng nhiều hơn trên Google.
+            </p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">EZ</span>
+            </div>
+            <h3 class="lux-card-title">Quản lý sản phẩm cực kỳ đơn giản</h3>
+            <p class="lux-card-text">
+              Dễ dàng cập nhật hàng hóa, hình ảnh, giá bán chỉ trong vài giây.
+            </p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">ONL</span>
+            </div>
+            <h3 class="lux-card-title">Tích hợp chat trực tuyến</h3>
+            <p class="lux-card-text">
+              Khách truy cập có thể liên hệ ngay, tăng tỉ lệ chốt đơn cực cao. <br><br>
+            </p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="lux-service-card">
+            <div class="lux-icon-box">
+              <div class="lux-icon-shine"></div>
+              <span class="lux-icon">SCR</span>
+            </div>
+            <h3 class="lux-card-title">Bảo mật an toàn tuyệt đối</h3>
+            <p class="lux-card-text">
+              Dữ liệu và thông tin khách hàng luôn được bảo vệ tối ưu.
+            </p>
           </div>
         </div>
       </div>
+
     </div>
   </div>
-</div>
 
-  <!-- Ưu điểm End -->
- 
+  <!-- Services End -->
+
   <!-- DỰ ÁN -->
   <!-- Project Start -->
   <div class="container-fluid py-5">
     <div class="container py-5">
       <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-        <h1 class="display-5">Các dự án nổi bật</h1>
+        <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Một số dự án nổi bật</span>
+                    </h2>
+                </div>
       </div>
       <div class="row g-5">
         <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
@@ -506,7 +244,11 @@
   <section class="custom-request fade-in" aria-labelledby="req-title" style="padding-bottom:60px;">
     <div class="container-two-col">
       <div class="req-left">
-        <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Website theo yêu cầu</h1>
+        <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Website theo yêu cầu</span>
+                    </h2>
+                </div>
 
         <ul class="req-list" role="list">
           <li>
@@ -553,8 +295,11 @@
   <!-- BẮT ĐẦU: Lý Do Bạn Nên Chọn Chúng Tôi -->
   <section class="why-choose fade-in" aria-labelledby="why-title" style="padding:60px 20px;">
     <div class="why-container">
-      <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Lý do bạn nên chọn chúng tôi
-      </h1>
+      <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Lý do nên chọn Sota</span>
+                    </h2>
+                </div>
 
       <div class="why-grid">
 
@@ -587,13 +332,17 @@
   </section>
 
   <!-- GÓI DỊCH VỤ -->
-      <!-- pricing Start -->
+   <!-- pricing Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5 w-50 mx-auto">Báo giá dịch vụ thiết kế website</h1>
-                                <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Bảng giá</h5>
-
+                <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Bảng
+                    giá</h5>
+                  <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Báo giá dịch vụ thiết kế Website</span>
+                    </h2>
+                </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
@@ -602,15 +351,18 @@
                             <h2 class="m-0">Cơ bản</h2>
                         </div>
                         <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
-                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST1 - 20/100</span></h1>
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST1 - 20/100</span>
+                            </h1>
                         </div>
                         <div class="p-4 text-center fs-5">
-                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
                             <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
                             <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
-                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư vấn ngay</button>
+                            <button type="button" class="lux-btn">Tư
+                                vấn ngay</button>
                         </div>
                     </div>
                 </div>
@@ -623,13 +375,15 @@
                             <h1 class="mb-0 text-primary"><span class="fs-5 fw-normal">WEB ST2 - 70/100</span></h1>
                         </div>
                         <div class="p-4 text-center fs-5">
-                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
                             <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
                             <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
                             <button type="button"
-                                class="btn btn-dark border-0 text-primary rounded-pill px-4 py-3 mt-3">Tư vấn ngay</button>
+                                class="lux-btn">Tư vấn
+                                ngay</button>
                         </div>
                     </div>
                 </div>
@@ -639,15 +393,18 @@
                             <h2 class="m-0">Nâng cao</h2>
                         </div>
                         <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
-                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST3 - 80/100</span></h1>
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST3 - 80/100</span>
+                            </h1>
                         </div>
                         <div class="p-4 text-center fs-5">
-                           <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người
+                                dùng và trải nghiệm người dùng</p>
                             <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
                             <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
                             <p><i class="fa fa-check text-success me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-check text-success me-2"></i>Hướng dẫn quản trị</p>
-                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư vấn ngay</button>
+                            <button type="button" class="lux-btn">Tư
+                                vấn ngay</button>
                         </div>
                     </div>
                 </div>
@@ -655,7 +412,6 @@
         </div>
     </div>
     <!-- Pricing End -->
-
   <!-- LIÊN HỆ -->
   <section style="text-align:center; margin-bottom: 70px;">
     <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Liên hệ đặt hàng</h1>
@@ -682,99 +438,99 @@
 
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
-<!--tuyết rới-->
-    <img id="santa" src="https://clipart-library.com/2024/picture-of-cartoon-santa/picture-of-cartoon-santa-3.png"
-        alt="Santa Claus">
-    <canvas id="snowCanvas"></canvas>
-    <script>
-        const canvas = document.getElementById('snowCanvas');
-        const ctx = canvas.getContext('2d');
+  <!--tuyết rới-->
+  <img id="santa" src="https://clipart-library.com/2024/picture-of-cartoon-santa/picture-of-cartoon-santa-3.png"
+    alt="Santa Claus">
+  <canvas id="snowCanvas"></canvas>
+  <script>
+    const canvas = document.getElementById('snowCanvas');
+    const ctx = canvas.getContext('2d');
 
-        let W = window.innerWidth;
-        let H = window.innerHeight;
-        canvas.width = W;
-        canvas.height = H;
+    let W = window.innerWidth;
+    let H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
 
-        // Tạo mảng tuyết
-        let mf = 150; // số lượng bông tuyết
-        let flakes = [];
-        for (let i = 0; i < mf; i++) {
-            flakes.push({
-                x: Math.random() * W,
-                y: Math.random() * H,
-                r: Math.random() * 4 + 1,
-                d: Math.random() * mf
-            });
-        }
+    // Tạo mảng tuyết
+    let mf = 150; // số lượng bông tuyết
+    let flakes = [];
+    for (let i = 0; i < mf; i++) {
+      flakes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 4 + 1,
+        d: Math.random() * mf
+      });
+    }
 
-        // Vị trí Santa
-        let santa = {
-            x: 20,
-            y: H - 100,
-            width: 80,
-            height: 80,
-            offset: 0,
-            dir: 1
-        };
+    // Vị trí Santa
+    let santa = {
+      x: 20,
+      y: H - 100,
+      width: 80,
+      height: 80,
+      offset: 0,
+      dir: 1
+    };
 
-        // Vẽ bông tuyết + Santa
-        function drawFlakes() {
-            ctx.clearRect(0, 0, W, H);
+    // Vẽ bông tuyết + Santa
+    function drawFlakes() {
+      ctx.clearRect(0, 0, W, H);
 
-            // Vẽ tuyết
-            ctx.fillStyle = "white";
-            ctx.beginPath();
-            for (let i = 0; i < mf; i++) {
-                let f = flakes[i];
-                ctx.moveTo(f.x, f.y);
-                ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      // Vẽ tuyết
+      ctx.fillStyle = "white";
+      ctx.beginPath();
+      for (let i = 0; i < mf; i++) {
+        let f = flakes[i];
+        ctx.moveTo(f.x, f.y);
+        ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+      }
+      ctx.fill();
+      moveFlakes();
+
+      // Vẽ Santa nhún nhẹ
+      if (santaImg.complete) { // đảm bảo ảnh tải xong
+        santa.offset += 0.5 * santa.dir;
+        if (santa.offset > 5 || santa.offset < 0) santa.dir *= -1;
+        ctx.drawImage(santaImg, santa.x, santa.y - santa.offset, santa.width, santa.height);
+      }
+    }
+
+    // Di chuyển bông tuyết
+    let angle = 0;
+    function moveFlakes() {
+      angle += 0.01;
+      for (let i = 0; i < mf; i++) {
+        let f = flakes[i];
+        f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
+        f.x += Math.sin(angle) * 2;
+
+        if (f.x > W + 5 || f.x < -5 || f.y > H) {
+          if (i % 3 > 0) {
+            flakes[i] = { x: Math.random() * W, y: -10, r: f.r, d: f.d };
+          } else {
+            if (Math.sin(angle) > 0) {
+              flakes[i] = { x: -5, y: Math.random() * H, r: f.r, d: f.d };
+            } else {
+              flakes[i] = { x: W + 5, y: Math.random() * H, r: f.r, d: f.d };
             }
-            ctx.fill();
-            moveFlakes();
-
-            // Vẽ Santa nhún nhẹ
-            if (santaImg.complete) { // đảm bảo ảnh tải xong
-                santa.offset += 0.5 * santa.dir;
-                if (santa.offset > 5 || santa.offset < 0) santa.dir *= -1;
-                ctx.drawImage(santaImg, santa.x, santa.y - santa.offset, santa.width, santa.height);
-            }
+          }
         }
+      }
+    }
 
-        // Di chuyển bông tuyết
-        let angle = 0;
-        function moveFlakes() {
-            angle += 0.01;
-            for (let i = 0; i < mf; i++) {
-                let f = flakes[i];
-                f.y += Math.cos(angle + f.d) + 1 + f.r / 2;
-                f.x += Math.sin(angle) * 2;
+    // Animate
+    setInterval(drawFlakes, 25);
 
-                if (f.x > W + 5 || f.x < -5 || f.y > H) {
-                    if (i % 3 > 0) {
-                        flakes[i] = { x: Math.random() * W, y: -10, r: f.r, d: f.d };
-                    } else {
-                        if (Math.sin(angle) > 0) {
-                            flakes[i] = { x: -5, y: Math.random() * H, r: f.r, d: f.d };
-                        } else {
-                            flakes[i] = { x: W + 5, y: Math.random() * H, r: f.r, d: f.d };
-                        }
-                    }
-                }
-            }
-        }
-
-        // Animate
-        setInterval(drawFlakes, 25);
-
-        // Resize canvas khi đổi kích thước màn hình
-        window.addEventListener('resize', () => {
-            W = window.innerWidth;
-            H = window.innerHeight;
-            canvas.width = W;
-            canvas.height = H;
-            santa.y = H - 100; // cập nhật vị trí Santa
-        });
-    </script>
+    // Resize canvas khi đổi kích thước màn hình
+    window.addEventListener('resize', () => {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W;
+      canvas.height = H;
+      santa.y = H - 100; // cập nhật vị trí Santa
+    });
+  </script>
 
 </body>
 

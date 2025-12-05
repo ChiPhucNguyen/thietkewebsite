@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,9 +26,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1">
+
 </head>
 <style>
+
     .blog-item img {
         height: 120px;
         /* chiều cao cố định cho tất cả */
@@ -73,11 +75,12 @@
     <!-- Carousel Start -->
     <div class="container-fluid carousel px-0 mb-5 pb-5">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
-                    aria-label="First slide"></li>
-                <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
-            </ol>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <img src="https://sotagroup.vn/upload/photo/slider-chuan-1-7670.png" class="img-fluid w-100"
@@ -124,13 +127,81 @@
     </div>
     <!-- Carousel End -->
 
+    <!-- ABOUT US PREMIUM SECTION -->
+    <section class="lux-about">
+        <div class="lux-container">
+
+            <!-- Left: Image -->
+            <div class="lux-img-wrapper fade-slide-left">
+                <div class="lux-img-border"></div>
+                <img src="https://images.unsplash.com/photo-1521790361543-f645cf042ec4" class="lux-img" alt="">
+            </div>
+
+            <!-- Right: Content -->
+            <div class="lux-content fade-slide-right">
+                <h2 class="lux-title">
+                    <span>Về Chúng Tôi</span>
+                </h2>
+
+                <p class="lux-text">
+                    Chúng tôi mang đến giải pháp thiết kế Website cao cấp – tinh gọn, chuẩn UX/UI và định hướng chiến
+                    lược thương hiệu.
+                </p>
+
+                <p class="lux-text">
+                    Với đội ngũ sáng tạo đa ngành, Sota Group luôn tạo ra sản phẩm mang tính đột phá, dẫn đầu xu hướng
+                    và khác biệt.
+                </p>
+
+                <a href="#" class="lux-btn">Khám phá thêm</a>
+            </div>
+
+        </div>
+    </section>
+    
+<section class="experience-soft">
+  <div class="exp-fade-top"></div>
+  <div class="exp-fade-bottom"></div>
+
+  <div class="exp-wrapper fade-up">
+    <h2>Kinh nghiệm vận hành <span>8.000+</span> Website</h2>
+
+    <p>
+      Chúng tôi đồng hành cùng hơn 8.000 doanh nghiệp trong hành trình xây dựng – phát triển website,
+      mang đến giải pháp tối ưu – giao diện chuẩn quốc tế – hiệu suất vượt trội.
+    </p>
+
+    <div class="exp-stats">
+      <div class="stat-item">
+        <h3>8.000+</h3>
+        <span>Website triển khai</span>
+      </div>
+
+      <div class="stat-item">
+        <h3>12+</h3>
+        <span>Năm kinh nghiệm</span>
+      </div>
+
+      <div class="stat-item">
+        <h3>24/7</h3>
+        <span>Hỗ trợ kỹ thuật</span>
+      </div>
+    </div>
+
+    <a href="#" class="exp-btn">Xem dự án nổi bật</a>
+  </div>
+</section>
+
+
 
     <!-- Get In Touch Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay=".3s">
         <div class="container py-5">
             <div class="bg-light px-4 py-5 rounded">
                 <div class="text-center">
-                    <h1 class="display-5 mb-5">Tư Vấn Thiết Kế Website Chuyên Nghiệp</h1>
+                    <h2 class="lux-title">
+                        <span>Tư vấn thiết kế Website chuyên nghiệp</span>
+                    </h2>
                 </div>
                 <form class="text-center mb-4" action="#">
                     <div class="row g-4">
@@ -161,7 +232,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-12">
-                            <input type="button" class="btn btn-primary w-100 p-3 border-0" value="Tư vấn ngay">
+                            <input type="button" class="lux-btn" value="Tư vấn ngay">
                         </div>
                     </div>
                 </form>
@@ -170,96 +241,212 @@
     </div>
     <!-- Get In Touch End -->
 
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
+    <!-- Services Start -->
+    <div class="container-fluid py-5 lux-service-section">
         <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="about-img">
-                        <div class="rotate-left"></div>
-                        <div class="rotate-right"></div>
-                        <img src="https://lean6sigma.edu.vn/FileUploads/tai-sao-phai-lam-viec-theo-quy-trinh.jpg"
-                            class="img-fluid h-100" alt="img">
-                    </div>
+
+            <div class="text-center mb-5">
+                <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Dịch vụ cao cấp của chúng tôi</span>
+                    </h2>
                 </div>
-                <div class="col-lg-8 col-md-12 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="about-item overflow-hidden">
-                        <h1 class="display-5 mb-2">Quy trình thiết kế Website</h1>
-                        <p class="fs-5" style="text-align: justify;">Công ty chúng tôi xây dựng quy trình thiết kế
-                            website rõ ràng và hiệu quả, giúp khách hàng sở hữu một sản phẩm chất lượng trong thời
-                            gian
-                            ngắn nhất.</p>
-                        <div class="row">
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-lightbulb fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>KHÁM PHÁ & KÝ KẾT</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-drafting-compass fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>THIẾT KẾ CONCEPT</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-code fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>PHÁT TRIỂN FRONT - BACK END</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-search fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>KIỂM THỬ LIÊN TỤC</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-box-open fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>BÀN GIAO & NGHIỆM THU</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="text-center">
-                                    <div class="p-4 bg-dark rounded d-flex"
-                                        style="align-items: center; justify-content: center;">
-                                        <i class="fas fa-sync-alt fa-4x text-primary"></i>
-                                    </div>
-                                    <div class="my-2">
-                                        <h5>DUY TRÌ & MỞ RỘNG</h5>
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Service 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="lux-service-card">
+                        <div class="lux-icon-box">
+                            <div class="lux-icon-shine"></div>
+                            <span class="lux-icon">WD</span>
                         </div>
+                        <h3 class="lux-card-title">Thiết Kế Website</h3>
+                        <p class="lux-card-text">
+                            Giao diện chuẩn UX/UI – đẳng cấp, mượt mà, hiện đại và tối ưu mọi thiết bị.
+                        </p>
                     </div>
                 </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="lux-service-card">
+                        <div class="lux-icon-box">
+                            <div class="lux-icon-shine"></div>
+                            <span class="lux-icon">SEO</span>
+                        </div>
+                        <h3 class="lux-card-title">Tối Ưu SEO</h3>
+                        <p class="lux-card-text">
+                            Đẩy mạnh khả năng hiển thị Google – tăng trưởng bền vững, không quảng cáo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="lux-service-card">
+                        <div class="lux-icon-box">
+                            <div class="lux-icon-shine"></div>
+                            <span class="lux-icon">MB</span>
+                        </div>
+                        <h3 class="lux-card-title">Chuẩn Mobile</h3>
+                        <p class="lux-card-text">
+                            Responsive tối ưu hoá cho Mobile & Tablet – tốc độ cao – trải nghiệm tốt. <br> <br>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="lux-service-card">
+                        <div class="lux-icon-box">
+                            <div class="lux-icon-shine"></div>
+                            <span class="lux-icon">UP</span>
+                        </div>
+                        <h3 class="lux-card-title">Bảo Trì & Nâng Cấp <br><br></h3>
+                        <p class="lux-card-text">
+                            Theo dõi định kỳ – xử lý lỗi – nâng cấp chức năng – tối ưu vận hành.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Services End -->
+    <!-- THIẾT KẾ THEO YÊU CẦU -->
+    <section class="custom-request fade-in" aria-labelledby="req-title" style="padding-bottom:60px;">
+        <div class="container-two-col">
+            <div class="req-left">
+                <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Website theo yêu cầu</span>
+                    </h2>
+                </div>
+
+                <ul class="req-list" role="list">
+                    <li>
+                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-crown"></i></span>
+                        <div class="req-text">
+                            <h3>Thiết kế độc quyền</h3>
+                            <p>Giao diện thiết kế riêng theo thương hiệu, không trùng lặp — đảm bảo nhận diện rõ ràng và
+                                chuyên nghiệp.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-gear"></i></span>
+                        <div class="req-text">
+                            <h3>Chức năng theo yêu cầu</h3>
+                            <p>Phát triển tính năng theo quy trình kinh doanh của bạn: booking, quản lý, tích hợp API,
+                                hệ thống thành viên, v.v.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-headset"></i></span>
+                        <div class="req-text">
+                            <h3>Đội ngũ lập trình hỗ trợ 24/7</h3>
+                            <p>Hỗ trợ kỹ thuật nhanh, sửa lỗi, và tư vấn nâng cấp liên tục — đồng hành cùng doanh nghiệp
+                                của bạn.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="req-cta" style="text-align: center;">
+                    <a href="lienhe.html" class="btn btn-yellow">Yêu cầu tư vấn</a>
+
+
+                </div>
+
+            </div>
+
+            <div class="req-right">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/x-DtjQjo-X8"
+                    title="Video giới thiệu" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+    <!-- Quy trình -->
+    <div class="container-fluid py-5 about-section">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+
+                <!-- Hình ảnh -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="about-image-wrapper">
+                        <img src="https://lean6sigma.edu.vn/FileUploads/tai-sao-phai-lam-viec-theo-quy-trinh.jpg"
+                            alt="Quy trình" class="about-image">
+                        <div class="gold-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Nội dung -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="about-content">
+                        <h1 class="title">Quy trình thiết kế Website</h1>
+                        <p class="desc">
+                            Chúng tôi xây dựng quy trình chuyên nghiệp, minh bạch và hiệu quả – đảm bảo tạo ra sản phẩm
+                            tối ưu, hiện đại và chuẩn UX/UI trong thời gian ngắn nhất.
+                        </p>
+
+                        <!-- Các bước -->
+                        <div class="row mt-4">
+
+                            <!-- Step -->
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>01</span>
+                                </div>
+                                <p class="step-title">Khám phá & Ký kết</p>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>02</span>
+                                </div>
+                                <p class="step-title">Thiết kế Concept</p>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>03</span>
+                                </div>
+                                <p class="step-title">Phát triển</p>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>04</span>
+                                </div>
+                                <p class="step-title">Kiểm thử</p>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>05</span>
+                                </div>
+                                <p class="step-title">Bàn giao</p>
+                            </div>
+
+                            <div class="col-6 col-md-4 col-lg-2 step-item">
+                                <div class="step-circle">
+                                    <span>06</span>
+                                </div>
+                                <p class="step-title">Duy trì</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -270,7 +457,11 @@
     <div class="container-fluid services py-5">
         <div class="container text-center py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5">Thiết kế Website theo ngành nghề</h1>
+                <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Thiết kế Website theo ngành nghề</span>
+                    </h2>
+                </div>
             </div>
             <div class="row g-5">
                 <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
@@ -282,7 +473,7 @@
                         <div class="content p-3">
                             <h4>Website Doanh nghiệp</h4>
                             <a href="website_doanhnghiep.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -299,7 +490,7 @@
                         <div class="content p-3">
                             <h4>Website Bán hàng</h4>
                             <a href="website_banhang.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -315,7 +506,7 @@
                         <div class="content p-3">
                             <h4>Website Tin tức - Blog</h4>
                             <a href="website_tintuc.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -331,7 +522,7 @@
                         <div class="content p-3">
                             <h4>Website Spa - Thẩm mỹ</h4>
                             <a href="website_spa.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -347,7 +538,7 @@
                         <div class="content p-3">
                             <h4>Website Cá nhân</h4>
                             <a href="website_canhan.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -363,7 +554,7 @@
                         <div class="content p-3">
                             <h4>Website Bất động sản</h4>
                             <a href="website_batdongsan.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -379,7 +570,7 @@
                         <div class="content p-3">
                             <h4>Website Giáo dục - Trung tâm</h4>
                             <a href="website_giaoduc.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -395,7 +586,7 @@
                         <div class="content p-3">
                             <h4>Website Nhà hàng - Khách sạn</h4>
                             <a href="website_nhahang.html"><button type="button"
-                                    class="btn btn-primary border-0 rounded-pill px-4 py-3">
+                                    class="lux-btn">
                                     Xem thêm
                                 </button></a>
                         </div>
@@ -407,6 +598,29 @@
         </div>
     </div>
     <!-- Services End -->
+<section class="why-choose-us">
+  <div class="container">
+    <h2 class="section-title">Tại sao chọn chúng tôi</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-header shimmer"></div>
+        <h3>Chất lượng đỉnh cao</h3>
+        <p>Sản phẩm & dịch vụ đạt tiêu chuẩn sang trọng, mang đến trải nghiệm đẳng cấp.</p>
+      </div>
+      <div class="card">
+        <div class="card-header shimmer"></div>
+        <h3>Tận tâm phục vụ</h3>
+        <p>Đội ngũ chuyên nghiệp luôn đồng hành cùng bạn, chăm sóc từng chi tiết.</p>
+      </div>
+      <div class="card">
+        <div class="card-header shimmer"></div>
+        <h3>Giá trị vĩnh cửu</h3>
+        <p>Sản phẩm & dịch vụ bền vững, ánh lên phong cách sang trọng vượt thời gian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- pricing Start -->
@@ -415,7 +629,11 @@
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
                 <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Bảng
                     giá</h5>
-                <h1 class="display-5 w-50 mx-auto">Báo giá dịch vụ thiết kế website</h1>
+                  <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Báo giá dịch vụ thiết kế Website</span>
+                    </h2>
+                </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
@@ -434,7 +652,7 @@
                             <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
-                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư
+                            <button type="button" class="lux-btn">Tư
                                 vấn ngay</button>
                         </div>
                     </div>
@@ -455,7 +673,7 @@
                             <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
                             <button type="button"
-                                class="btn btn-dark border-0 text-primary rounded-pill px-4 py-3 mt-3">Tư vấn
+                                class="lux-btn">Tư vấn
                                 ngay</button>
                         </div>
                     </div>
@@ -476,7 +694,7 @@
                             <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
                             <p><i class="fa fa-check text-success me-2"></i>Bàn giao mã nguồn (source code)</p>
                             <p><i class="fa fa-check text-success me-2"></i>Hướng dẫn quản trị</p>
-                            <button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư
+                            <button type="button" class="lux-btn">Tư
                                 vấn ngay</button>
                         </div>
                     </div>
@@ -491,7 +709,11 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5 w-50 mx-auto">Đội ngũ của Sota Group</h1>
+                  <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Đội ngũ của chúng tôi</span>
+                    </h2>
+                </div>
             </div>
             <div class="row g-5">
                 <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
@@ -567,7 +789,11 @@
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5">Đối tác của chúng tôi</h1>
+                  <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Đối tác của Sota</span>
+                    </h2>
+                </div>
             </div>
 
             <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay=".5s">
@@ -613,7 +839,11 @@
     <div class="container-fluid testimonial py-5">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5 w-50 mx-auto">Cảm nhận của khách hàng</h1>
+                  <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Cảm nhận của khách hàng</span>
+                    </h2>
+                </div>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay=".5s">
                 <div class="testimonial-item">
@@ -725,7 +955,11 @@
     </div>
     <!-- Testiminial End -->
 
-
+  <!-- CTA Fixed Start -->
+    <a href="hotro.html" class="lux-cta-btn">
+        <i class="fa fa-comments me-2"></i> Tư vấn ngay
+    </a>
+    <!-- CTA Fixed End -->
     <!-- FOOTER -->
     <div id="footer"></div>
     <script>
@@ -846,7 +1080,15 @@
         });
     </script>
 
-
+<script>
+// Optional: show alert on submit
+const newsletterForm = document.querySelector('.lux-newsletter-form');
+newsletterForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert("Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ sớm.");
+    newsletterForm.reset();
+});
+</script>
 
 </body>
 

@@ -25,98 +25,98 @@
   
 
   <title>Đặt hàng thiết kế website</title>
-  <style>
-    :root {
-      --accent: #fdf001;
-      --text: #111;
-      --bg: #fff;
-      --radius: 10px;
-    }
+<style>
+.order-section {
+  background-color: #111; /* nền tối sang trọng */
+  color: #FFD700;
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
 
-    body {
-      font-family: Inter, sans-serif;
-      background: #f9f9f9;
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-    }
+.order-section h1.order-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  background: linear-gradient(90deg, #FFD700, #FFCC00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: order-text-glow 3s infinite alternate;
+}
 
-    .order-section {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: var(--bg);
-      border-radius: var(--radius);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
+.order-section .order-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.2);
+}
 
-    .order-section h1 {
-    
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 32px;
-    }
+.order-section .form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.order-section .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #FFD700;
+}
 
-    label {
-      font-weight: 600;
-    }
+.order-section .form-group input,
+.order-section .form-group select,
+.order-section .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid #ccc;
-      border-radius: var(--radius);
-      font-size: 14px;
-      outline: none;
-      transition: border 0.2s;
-    }
+.order-section .form-group input:focus,
+.order-section .form-group select:focus,
+.order-section .form-group textarea:focus {
+  box-shadow: 0 0 10px #FFD700;
+  border-color: #FFCC00;
+}
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--accent);
-    }
+.order-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
 
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
+.order-section .submit-btn {
+  background: linear-gradient(45deg, #FFD700, #FFCC00);
+  color: #111;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
 
-    button {
-      padding: 12px 20px;
-      font-size: 16px;
-      background: var(--accent);
-      color: var(--text);
-      font-weight: 700;
-      border: none;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+.order-section .submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7);
+}
 
-    button:hover {
-      background: #fdf001;
-    }
+/* Glow text animation scoped */
+@keyframes order-text-glow {
+  0% { filter: drop-shadow(0 0 5px #FFD700); }
+  50% { filter: drop-shadow(0 0 15px #FFCC00); }
+  100% { filter: drop-shadow(0 0 10px #FFD700); }
+}
+</style>
 
-    @media (max-width: 768px) {
-      .order-section {
-        margin: 20px;
-        padding: 15px;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -129,57 +129,60 @@
     </script>
 
   <section class="order-section">
-      <h1 class="display-5">Đặt hàng thiết kế Website</h1>
-    <form action="#" method="post">
-      <div>
-        <label for="name">Họ và tên</label>
-        <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
-      </div>
-      
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="email@example.com" required>
-      </div>
+  <h1 class="order-title">Đặt hàng thiết kế Website</h1>
+  
+  <form action="#" method="post" class="order-form">
+    <div class="form-group">
+      <label for="name">Họ và tên</label>
+      <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="email@example.com" required>
+    </div>
 
-      <div>
-        <label for="phone">Số điện thoại</label>
-        <input type="tel" id="phone" name="phone" placeholder="0123456789" required>
-      </div>
+    <div class="form-group">
+      <label for="phone">Số điện thoại</label>
+      <input type="tel" id="phone" name="phone" placeholder="0123456789" required>
+    </div>
 
-      <div>
-        <label for="website-type">Loại website</label>
-        <select id="website-type" name="website-type" required>
-          <option value="">-- Chọn loại website --</option>
-          <option value="company">Website doanh nghiệp</option>
-          <option value="ecommerce">Website bán hàng</option>
-          <option value="portfolio">Website cá nhân</option>
-          <option value="other">Khác</option>
-        </select>
-      </div>
+    <div class="form-group">
+      <label for="website-type">Loại website</label>
+      <select id="website-type" name="website-type" required>
+        <option value="">-- Chọn loại website --</option>
+        <option value="company">Website doanh nghiệp</option>
+        <option value="ecommerce">Website bán hàng</option>
+        <option value="portfolio">Website cá nhân</option>
+        <option value="other">Khác</option>
+      </select>
+    </div>
 
-      <div>
-        <label for="budget">Ngân sách (VNĐ)</label>
-        <input type="number" id="budget" name="budget" placeholder="VD: 15000000" required>
-      </div>
+    <div class="form-group">
+      <label for="budget">Ngân sách (VNĐ)</label>
+      <input type="number" id="budget" name="budget" placeholder="VD: 15000000" required>
+    </div>
 
-      <div>
-        <label for="deadline">Thời gian hoàn thành mong muốn</label>
-        <input type="date" id="deadline" name="deadline" required>
-      </div>
+    <div class="form-group">
+      <label for="deadline">Thời gian hoàn thành mong muốn</label>
+      <input type="date" id="deadline" name="deadline" required>
+    </div>
 
-      <div>
-        <label for="expectation">Website tham khảo của quý khách</label>
-        <input type="text" id="expect" name="expect" placeholder="thietkeweb.com" required>
-      </div>
+    <div class="form-group">
+      <label for="expect">Website tham khảo của quý khách</label>
+      <input type="text" id="expect" name="expect" placeholder="thietkeweb.com" required>
+    </div>
 
-      <div>
-        <label for="requirements">Yêu cầu / Ghi chú</label>
-        <textarea id="requirements" name="requirements" placeholder="Mô tả chi tiết về website bạn muốn..."></textarea>
-      </div>
+    <div class="form-group">
+      <label for="requirements">Yêu cầu / Ghi chú</label>
+      <textarea id="requirements" name="requirements" placeholder="Mô tả chi tiết về website bạn muốn..."></textarea>
+    </div>
 
-      <button type="submit">Gửi yêu cầu</button>
-    </form>
-  </section>
+    <button type="submit" class="submit-btn">Gửi yêu cầu</button>
+  </form>
+</section>
+
+
 <!-- FOOTER -->
     <div id="footer"></div>
     <script>

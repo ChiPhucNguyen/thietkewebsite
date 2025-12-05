@@ -25,70 +25,85 @@
 
   <title>Liên hệ</title>
   <style>
-    :root {
-      --accent: #000000;
-      --text: #111;
-      --bg: #fff;
-      --radius: 12px;
-    }
+   .contact-section {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #111; /* nền tối sang trọng */
+  color: #FFD700;
+}
 
-    body {
-      font-family: Inter, sans-serif;
-      background: #f9f9f9;
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-    }
+.contact-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, #FFD700, #FFCC00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-glow 3s infinite alternate;
+}
 
-    .contact-section {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .contact-section h1 {
-      color: var(--accent);
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-   .contact-cards {
+.contact-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 thẻ trên 1 hàng */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-card {
-  background: #fff;
-  border: 2px solid #fdf001;
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px; /* chiều cao cố định, tất cả thẻ bằng nhau */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: #1a1a1a; /* card nền đen xám sang */
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
 }
 
-.contact-card:hover {
+.contact-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #FFD700; /* chữ vàng gold */
+}
+
+.contact-card p {
+  font-size: 16px;
+  color: #fff; /* chữ trắng cho nội dung */
+  line-height: 1.6;
+}
+
+/* Glow & hover effect */
+.glow-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #FFD700, #FFCC00);
+  filter: blur(15px);
+  opacity: 0.4;
+  transition: opacity 0.4s;
+  z-index: -1;
+}
+
+.glow-card:hover::before {
+  opacity: 0.8;
+}
+
+.glow-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.5);
 }
 
-    .contact-card h3 {
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 22px;
-    }
+/* Text glow animation */
+@keyframes text-glow {
+  0% { filter: drop-shadow(0 0 5px #FFD700); }
+  50% { filter: drop-shadow(0 0 15px #FFCC00); }
+  100% { filter: drop-shadow(0 0 10px #FFD700); }
+}
 
-    .contact-card p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: var(--text);
-    }
   </style>
 </head>
 <body>
@@ -102,34 +117,36 @@
     </script>
 
   <section class="contact-section">
-     <h1 class="display-5">Liên hệ với chúng tôi</h1>
+  <h1 class="contact-title">Liên hệ với chúng tôi</h1>
+
   <div class="contact-cards">
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Email</h3>
       <p>info@sotagroup.vn</p>
     </div>
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Số điện thoại</h3>
       <p>0939.857.111</p>
     </div>
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Địa chỉ</h3>
       <p>60 Đường số 1, KDC Cityland Park Hills, P.Gò Vấp, TP. HCM</p>
     </div>
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Fanpage</h3>
       <p>facebook.com/sotagroup</p>
     </div>
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Zalo</h3>
       <p>0985.528.427</p>
     </div>
-    <div class="contact-card">
+    <div class="contact-card glow-card">
       <h3>Hỗ trợ trực tuyến</h3>
       <p>sotagroup.vn</p>
     </div>
   </div>
 </section>
+
 <!-- FOOTER -->
     <div id="footer"></div>
     <script>

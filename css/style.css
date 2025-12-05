@@ -1,20 +1,3 @@
-
-/*** Spinner Start ***/
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .8s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
- }
-
- #spinner.show {
-     transition: opacity .8s ease-out, visibility 0s linear .0s;
-     visibility: visible;
-     opacity: 1;
- }
-
-/*** Spinner End ***/
-
 .back-to-top {
     position: fixed;
     right: 30px;
@@ -163,6 +146,7 @@
     border: 2px solid var(--bs-primary) !important;
 }
 
+
 /*** Navbar End ***/
 
 
@@ -244,13 +228,13 @@
     .carousel-control-next {
         display: none;
     }
-    
+
 }
 
 .page-header {
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/price.jpeg) center center no-repeat;
     background-size: cover;
-    margin-bottom: 6rem;
+    margin-bottom: 2rem;
 }
 
 /*** Carousel End ***/
@@ -258,86 +242,163 @@
 
 /*** About Start ***/
 
-.about-img {
-    width: 100%;
-    height: 100%;
+/* Vùng about tổng */
+.about-section {
+    background: #ffffff;
+    color: #111;
+}
+
+/* Ảnh */
+.about-image-wrapper {
     position: relative;
-    padding: 30px 30px 30px 30px ;
+    border-radius: 18px;
     overflow: hidden;
 }
 
-.about-img::before {
-    content: "";
+.about-image {
     width: 100%;
-    height: 40%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-    border-radius: 10px 10px 10px 10px;
+    border-radius: 18px;
+    transition: transform .5s ease;
 }
 
-
-.about-img::after {
-    content: "";
-    width: 100%;
-    height: 60%;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    z-index: 1;
-    border-radius: 10px 10px 10px 10px;
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.07);
 }
 
-.rotate-left {
-    width: 150px;
-    height: 100px;
+/* Gold glow */
+.gold-glow {
     position: absolute;
-    top: 28%;
-    left: -10%;
-    rotate: 25deg;
-    z-index: 2;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent 70%);
+    animation: glowMove 4s infinite linear;
 }
 
-.rotate-right {
-    width: 150px;
-    height: 100px;
-    position: absolute;
-    top: 28%;
-    right: -10%;
-    rotate: -25deg;
-    z-index: 2;
+@keyframes glowMove {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(1.3) translate(20px, 20px);
+    }
+
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
 }
 
-.about-img img {
-    position: relative;
-    z-index: 2;
-    border-radius: 10px;
+/* Nội dung */
+.about-content .title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #000;
+    background: linear-gradient(90deg, #000, #B8860B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.experiences {
-    width: 160px;
-    height: 200px;
-    position: absolute;
-    top: -0;
-    right: 0;
-    padding: 35px 35px;
+.about-content .desc {
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Step item */
+.step-item {
     text-align: center;
-    border-radius: 10px;
-    z-index: 3;
-    animation: mymove 5s infinite;
-    animation-timing-function: ease-in-out;
+    margin-bottom: 20px;
+    transition: transform .3s ease;
 }
 
-@keyframes mymove {
-    from {top: -202px;}
-    to {top: 102%;}
+.step-item:hover {
+    transform: translateY(-8px);
 }
+
+/* Vòng tròn vàng */
+.step-circle {
+    width: 75px;
+    height: 75px;
+    background: radial-gradient(circle, #FFD700, #B8860B);
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    transition: all .4s ease;
+}
+
+.step-circle:hover {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+    transform: scale(1.1);
+}
+
+.step-title {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #111;
+    font-size: 15px;
+}
+
 
 /*** About End ***/
 
 
 /*** Services Start ***/
+/* ============================
+   SERVICES ITEM LUXURY BORDER
+============================ */
+.services-item {
+
+    overflow: hidden;
+    transition: 0.35s ease;
+    position: relative;
+}
+
+/* Viền vàng đẹp khi hover */
+.services-item:hover {
+    border-color: #d4af37;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.4);
+    transform: translateY(-6px);
+}
+
+/* ============================
+   IMAGE BORDER + EFFECT
+============================ */
+.services-item img {
+    /* Viền đen dưới ảnh */
+    transition: 0.35s ease;
+}
+
+/* Hiệu ứng hình nâng tông sang trọng */
+.services-item:hover img {
+    border-bottom-color: #d4af37;
+    filter: brightness(1.07) contrast(1.05);
+}
+
+/* ============================
+   BUTTON (giữ nguyên class lux-btn)
+============================ */
+
+.lux-btn {
+    border: 2px solid #000;
+    background: #000;
+    color: #fff;
+    padding: 8px 22px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.lux-btn:hover {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: #000;
+}
+
 .services-inner-icon {
     width: 130px;
     height: 130px;
@@ -347,7 +408,7 @@
     justify-content: center;
     transition: .5s;
     position: relative;
-    
+
 }
 
 .services-inner-icon::after {
@@ -368,8 +429,8 @@
     margin-left: -50%;
     background: var(--bs-primary);
     color: var(--bs-dark);
-    
-} 
+
+}
 
 .services-item i {
     text-align: center;
@@ -395,7 +456,7 @@
     width: 100%;
     height: 260px;
     position: relative;
-    padding: 30px 30px 30px 30px ;
+    padding: 30px 30px 30px 30px;
     overflow: hidden;
 }
 
@@ -466,13 +527,15 @@
 .project-item {
     position: relative;
     overflow: hidden;
-    height: 350px; /* chiều cao khung cố định */
+    height: 350px;
+    /* chiều cao khung cố định */
     border-radius: 10px;
 }
 
 .project-item img {
     width: 100%;
-    height: 120%; /* cao hơn khung để có không gian lướt */
+    height: 120%;
+    /* cao hơn khung để có không gian lướt */
     object-fit: cover;
     position: absolute;
     bottom: 0;
@@ -481,13 +544,14 @@
 
 /* Khi hover – ảnh lướt từ từ lên */
 .project-item:hover img {
-    transform: translateY(-20%); 
+    transform: translateY(-20%);
 }
 
 .project-item {
     position: relative;
     overflow: hidden;
-    height: 300px; /* chiều cao cố định */
+    height: 300px;
+    /* chiều cao cố định */
     border-radius: 10px;
 }
 
@@ -509,8 +573,10 @@
     0% {
         transform: translateY(0);
     }
+
     100% {
-        transform: translateY(-20%); /* trượt lên nhẹ nhàng */
+        transform: translateY(-20%);
+        /* trượt lên nhẹ nhàng */
     }
 }
 
@@ -588,7 +654,7 @@
 /*** Pricing Start ***/
 .pricing-item {
     transition: .5s;
-    
+
 }
 
 .pricing-item:hover {
@@ -617,6 +683,7 @@
 
 
 /*** Team Start ***/
+
 .team-item {
     position: relative;
     width: 100%;
@@ -652,13 +719,14 @@
 .team-item .team-content {
     box-shadow: inset 0 0 0 0 var(--bs-dark);
     transition: 1s;
-    
+
 }
 
 .team-item:hover .team-content {
     box-shadow: inset 550px 0 0 0 var(--bs-dark);
     color: var(--bs-primary) !important;
 }
+
 /*** Team End ***/
 
 /*** testimonial Start ***/
@@ -769,7 +837,7 @@
     background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/footer.jpg) center center no-repeat;
     background-size: cover;
     color: rgba(255, 255, 255, .7);
-    margin-top: 6rem;
+    margin-top: 0rem;
 }
 
 .footer-item,
@@ -790,52 +858,1442 @@
 }
 
 .copyright .copyright-icon {
-    width: 44px; 
-    height: 44px; 
+    width: 44px;
+    height: 44px;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
 }
 
 /*** Copywright End ***/
 .carousel-item {
-    height: 600px; /* chiều cao banner, muốn cao hơn thì tăng */
+    height: 600px;
+    /* chiều cao banner, muốn cao hơn thì tăng */
     overflow: hidden;
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ảnh tự phủ đầy khung */
-    object-position: center; /* canh giữa ảnh */
+    object-fit: cover;
+    /* ảnh tự phủ đầy khung */
+    object-position: center;
+    /* canh giữa ảnh */
 }
 
 /*tuyết rơi*/
 #snowCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* Không cản tương tác click */
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Không cản tương tác click */
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
 }
 
 
 
 #santa {
-  position: fixed;
-  left: 20px;     /* cách trái 20px */
-  bottom: 20px;   /* cách dưới 20px */
-  width: 80px;    /* kích thước Santa */
-  z-index: 10000; /* trên canvas */
-  pointer-events: none;
-  animation: santaMove 2s infinite alternate;
+    position: fixed;
+    left: 20px;
+    /* cách trái 20px */
+    bottom: 20px;
+    /* cách dưới 20px */
+    width: 80px;
+    /* kích thước Santa */
+    z-index: 10000;
+    /* trên canvas */
+    pointer-events: none;
+    animation: santaMove 2s infinite alternate;
 }
 
 /* Tạo chuyển động nhè nhẹ cho Santa (nhún lên xuống) */
 @keyframes santaMove {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
+
+
+
+/* ======= LUXURY ABOUT SECTION ======= */
+.lux-about {
+    padding: 120px 0;
+    background: #ffffff;
+    position: relative;
+}
+
+.lux-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* IMAGE BLOCK */
+.lux-img-wrapper {
+    position: relative;
+    width: 50%;
+}
+
+.lux-img-border {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #f0c040;
+    /* Gold */
+    border-radius: 20px;
+    z-index: 1;
+    animation: float 4s ease-in-out infinite;
+}
+
+.lux-img {
+    width: 100%;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 10px 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* RIGHT CONTENT */
+.lux-content {
+    width: 50%;
+}
+
+.lux-title {
+    font-size: 44px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+}
+
+.lux-title span {
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+.lux-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+/* BUTTON */
+.lux-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    margin-top: 10px;
+    background: #000;
+    color: #f4d36d;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.35s ease;
+    border: 2px solid transparent;
+}
+
+.lux-btn:hover {
+    background: transparent;
+    border-color: #000;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fade-slide-left,
+.fade-slide-right {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1.2s ease-out forwards;
+}
+
+.fade-slide-left {
+    animation-delay: 0.2s;
+}
+
+.fade-slide-right {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .lux-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lux-img-wrapper,
+    .lux-content {
+        width: 100%;
+    }
+
+    .lux-img-border {
+        top: -15px;
+        left: -15px;
+    }
+
+    .lux-title::after {
+        margin: 12px auto 0 auto;
+    }
+}
+
+/* ============================
+   Luxury Service Section
+============================ */
+.lux-service-section {
+    background: #ffffff;
+}
+
+.lux-service-title {
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #000;
+    position: relative;
+}
+
+.lux-service-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #d4a72c;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 3px;
+}
+
+/* ======= CARD ======= */
+.lux-service-card {
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 20px;
+    border: 2px solid rgba(212, 167, 44, 0.3);
+    transition: .4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lux-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    border-color: #d4a72c;
+}
+
+/* ===== ICON PART ===== */
+.lux-icon-box {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #000, #1a1a1a);
+    border: 3px solid #d4a72c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.lux-icon {
+    font-size: 26px;
+    font-weight: 700;
+    color: #d4a72c;
+    letter-spacing: 1px;
+}
+
+/* Hiệu ứng ánh sáng chạy */
+.lux-icon-shine {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.25) 50%,
+            rgba(255, 255, 255, 0.0) 100%);
+    transform: rotate(25deg);
+    animation: shineMove 3s infinite ease-in-out;
+}
+
+@keyframes shineMove {
+    0% {
+        transform: translate(-150%, -150%) rotate(25deg);
+    }
+
+    100% {
+        transform: translate(150%, 150%) rotate(25deg);
+    }
+}
+
+/* ===== TEXT ===== */
+.lux-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.lux-card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lux-service-card {
+        padding: 28px 20px;
+    }
+}
+
+/* -------------------------------
+   THIẾT KẾ THEO YÊU CẦU – SANG TRỌNG
+-----------------------------------*/
+
+.custom-request {
+    background: #fff;
+    padding: 80px 0;
+    position: relative;
+}
+
+/* Layout 2 cột */
+.container-two-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* LEFT */
+.req-left h1 {
+    font-weight: 700;
+    color: #111;
+    letter-spacing: .5px;
+}
+
+.req-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.req-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 20px;
+    background: #fafafa;
+    border-left: 4px solid #f1c40f;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    transition: all .35s ease;
+}
+
+.req-list li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    border-left-color: #e1b307;
+}
+
+.req-icon i {
+    font-size: 30px;
+    color: #d4af37;
+    /* vàng sang */
+    text-shadow: 0px 0px 8px rgba(212, 175, 55, 0.4);
+}
+
+.req-text h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+}
+
+.req-text p {
+    margin: 4px 0 0;
+    font-size: 15px;
+    color: #444;
+}
+
+/* CTA BUTTON */
+
+.btn-yellow {
+    background: #d4af37;
+    margin-top: 10%;
+    padding: 10px 24px;
+    color: #000;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn-yellow:hover {
+    background: #b99327;
+    transform: translateY(-3px);
+}
+
+.btn-dark {
+    background: #111;
+    padding: 10px 24px;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-left: 12px;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn-dark:hover {
+    background: #000;
+    transform: translateY(-3px);
+}
+
+/* IMAGE */
+.req-right img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: .4s;
+}
+
+.req-right img:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .container-two-col {
+        flex-direction: column;
+    }
+
+    .req-left {
+        text-align: center;
+    }
+
+    .req-list li {
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+/* -------------------------------
+      PROJECT – SANG TRỌNG
+--------------------------------*/
+.project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+    background: #fff;
+    transition: all .4s ease;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+}
+
+/* Viền vàng sang trọng */
+.project-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, #d4af37, #f8e49c, #cfa433);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: .75;
+    transition: .4s ease;
+}
+
+.project-item:hover::before {
+    opacity: 1;
+}
+
+/* Image */
+.project-item img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform .55s ease;
+}
+
+.project-item:hover img {
+    transform: scale(1.07);
+}
+
+/* Dark overlay */
+.project-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: .5s ease;
+    border-radius: 18px;
+}
+
+.project-item:hover::after {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Project title */
+.project-item a {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 30px;
+    font-size: 20px;
+    backdrop-filter: blur(4px);
+    transition: all .45s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hover hiện title */
+.project-item:hover a {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Left + right black bars (đang dùng trong HTML) */
+.project-left,
+.project-right {
+    display: none;
+    /* Ẩn vì không cần nữa với thiết kế mới */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-item img {
+        height: 260px;
+    }
+}
+
+/* -------------------------------
+      WHY CHOOSE – PREMIUM STYLE
+--------------------------------*/
+.why-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+/* KHUNG ITEM */
+.why-item {
+    background: #ffffff;
+    padding: 35px 28px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    transition: all .35s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    border: 1px solid transparent;
+}
+
+/* VIỀN VÀNG KIM – hiệu ứng gradient */
+.why-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(135deg, #d4af37, #f8e49c, #cfa433);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+.why-item:hover::before {
+    opacity: 1;
+}
+
+/* HOVER NHẸ NHÀNG LÊN 3D */
+.why-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* SECTION BACKGROUND NHẸ */
+.experience-soft {
+    position: relative;
+    padding: 120px 20px;
+    background: url("https://wallpapers.com/blog/wp-content/uploads/2023/06/glitter-golden-bokeh-lights-scaled.jpeg") center center/cover no-repeat;
+    color: #222;
+    overflow: hidden;
+}
+
+/* Hiệu ứng mờ dần ở top */
+.exp-fade-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1;
+}
+
+/* Hiệu ứng mờ dần ở bottom */
+.exp-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1;
+}
+
+.exp-wrapper {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    z-index: 2;
+}
+
+.exp-wrapper h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.exp-wrapper h2 span {
+    color: #d4af37;
+    font-weight: 800;
+}
+
+/* Mô tả */
+.exp-wrapper p {
+    font-size: 25px;
+    line-height: 1.8;
+    opacity: 0.85;
+    max-width: 720px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+/* STATS */
+.exp-stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    padding: 20px 32px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    transition: 0.35s;
+}
+
+.stat-item:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 25px rgba(212, 175, 55, 0.25);
+}
+
+.stat-item h3 {
+    font-size: 34px;
+    margin-bottom: 4px;
+    color: #d4af37;
+}
+
+.stat-item span {
+    font-size: 15px;
+    color: #444;
+}
+
+/* BUTTON */
+.exp-btn {
+    display: inline-block;
+    padding: 13px 34px;
+    background: #d4af37;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    transition: .3s;
+}
+
+.exp-btn:hover {
+    background: #c9a530;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .exp-wrapper h2 {
+        font-size: 32px;
+    }
+
+    .stat-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.why-choose-us {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.why-choose-us .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #FFD700;
+    /* vàng kim loại */
+    background: linear-gradient(90deg, #FFD700, #FFFAAA, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s infinite linear;
+}
+
+/* shimmer animation cho title */
+@keyframes shimmer {
+    0% {
+        background-position: -500px 0;
+    }
+
+    100% {
+        background-position: 500px 0;
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 300px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+    transition: transform 0.5s, box-shadow 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
+.card-header {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #FFFAAA, #FFD700);
+}
+
+.shimmer {
+    animation: shimmer 2s infinite linear;
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #FFD700;
+}
+
+.card p {
+    color: #eee;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.hero-lux {
+    padding: 0px 0px;
+    position: relative;
+}
+
+/* Tiêu đề vàng gold metallic */
+.hero-lux-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #000; /* nền chữ đen để nổi bật gradient */
+}
+
+.hero-lux-title span {
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: shine-gold 4s linear infinite;
+    display: inline-block;
+}
+
+/* Glow mô tả */
+.hero-lux-desc {
+    font-size: 20px;
+    max-width: 750px;
+    margin: 0 auto;
+    color: #111;
+    text-shadow: 0 0 5px rgba(196,155,34,0.5), 0 0 10px rgba(244,211,109,0.3);
+    animation: desc-gold-glow 4s ease-in-out infinite alternate;
+}
+
+/* Nút vàng bóng bảy */
+.hero-lux-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    background: linear-gradient(45deg,#c49b22,#f4d36d,#ffeb99);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(244,211,109,0.5);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.hero-lux-btn::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: rgba(255,255,255,0.4);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.hero-lux-btn:hover::before {
+    left: 125%;
+}
+
+.hero-lux-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 50px rgba(244,211,109,0.8);
+}
+
+/* Hiệu ứng shimmer */
+@keyframes shine-gold {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+
+/* Glow mô tả */
+@keyframes desc-gold-glow {
+    0% { text-shadow: 0 0 5px rgba(196,155,34,0.5); }
+    50% { text-shadow: 0 0 18px rgba(244,211,109,0.7); }
+    100% { text-shadow: 0 0 10px rgba(196,155,34,0.6); }
+}
+
+/* Container với background gradient mờ dần */
+.lux-benefits-white {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(255,215,0,0.05) 0%, rgba(255,215,0,0) 100%);
+  overflow: hidden;
+}
+
+/* Title */
+.lux-title {
+  font-size: 44px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(196,155,34,0.7);
+}
+
+.lux-title span {
+  background: linear-gradient(90deg, #c49b22, #f4d36d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.lux-subtitle {
+  font-size: 18px;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+/* Cards */
+.lux-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  position: relative;
+  z-index: 1; /* để nổi trên gradient */
+}
+
+.lux-card {
+  background: linear-gradient(135deg, rgba(196,155,34,0.05), rgba(255,215,0,0.1));
+  border-radius: 25px;
+  padding: 30px 20px;
+  transition: all 0.4s ease;
+  cursor: default;
+  box-shadow: 0 10px 25px rgba(255,215,0,0.2);
+}
+
+.lux-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(255,215,0,0.4);
+}
+
+/* Icon */
+.lux-card-icon {
+  font-size: 50px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #c49b22, #f4d36d);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  text-shadow: 0 0 8px rgba(255,215,0,0.8);
+  animation: glowIcon 2.5s infinite alternate;
+}
+
+/* Card Title */
+.lux-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #c49b22, #f4d36d);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 8px rgba(255,215,0,0.6);
+  animation: glowText 3s infinite alternate;
+}
+
+/* Card Text */
+.lux-card-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* Glow animation */
+@keyframes glowIcon {
+  0% { text-shadow: 0 0 5px rgba(255,215,0,0.5); }
+  50% { text-shadow: 0 0 15px rgba(255,215,0,0.8); }
+  100% { text-shadow: 0 0 10px rgba(255,215,0,0.6); }
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 5px rgba(255,215,0,0.4); }
+  50% { text-shadow: 0 0 12px rgba(255,215,0,0.7); }
+  100% { text-shadow: 0 0 8px rgba(255,215,0,0.5); }
+}
+
+.lux-benefits-horizontal {
+    background-color: #111; /* nền tối sang trọng */
+    padding: 80px 20px;
+    color: #FFD700;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.lux-benefits-horizontal .lux-title {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 8px rgba(255,215,0,0.5);
+}
+
+.lux-benefits-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.lux-benefit {
+    flex: 1 1 22%; /* 4 mục vừa khít hàng ngang */
+    background: rgba(255, 215, 0, 0.05); /* mờ nhẹ trên nền tối */
+    padding: 25px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(255,215,0,0.15);
+}
+
+.lux-benefit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255,215,0,0.35);
+    background: rgba(255,215,0,0.08);
+}
+
+.lux-benefit .lux-icon {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c49b22, #f4d36d);
+    color: #111;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 15px rgba(255,215,0,0.4);
+}
+
+.lux-benefit h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #FFD700;
+}
+
+.lux-benefit p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff9d6;
+}
+
+.lux-projects {
+    font-family: 'Nunito', sans-serif;
+}
+
+.lux-project-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.lux-project-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255,215,0,0.35);
+}
+
+.lux-project-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.lux-project-item:hover .lux-project-img img {
+    transform: scale(1.1);
+}
+
+.lux-project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 20px;
+}
+
+.lux-project-item:hover .lux-project-overlay {
+    opacity: 1;
+}
+
+.lux-project-overlay h3 {
+    color: #FFD700;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    padding: 15px 20px;
+    background: rgba(17, 17, 17, 0.7);
+    border-radius: 15px;
+}
+/* Tự động lướt ảnh lên từ từ */
+@keyframes scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); } /* điều chỉnh tùy chiều cao ảnh */
+}
+
+.lux-project-img img {
+  animation: scroll-up 10s linear infinite alternate; 
+}
+
+
+.lux-cta-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(45deg, #FFD700, #FFCC00);
+    color: #111;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(255,215,0,0.5);
+    z-index: 9999;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.lux-cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255,215,0,0.7);
+}
+.lux-cta-btn i {
+    font-size: 20px;
+}
+.lux-blog-mosaic {
+  background: #fdfdfd; /* nền sáng */
+}
+.lux-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+.lux-mosaic-card {
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+  transition: transform 0.4s, box-shadow 0.4s;
+  color: #111;
+}
+.lux-mosaic-card:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.lux-mosaic-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent);
+  backdrop-filter: blur(5px);
+}
+.lux-mosaic-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .lux-mosaic-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 180px;
+  }
+}
+@media(max-width: 480px){
+  .lux-mosaic-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+}
+
+.lux-faqs {
+  background: #fdfdfd;
+}
+
+.lux-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lux-faq-card {
+  background: linear-gradient(145deg,#fff,#f8f8f8);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.lux-faq-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.lux-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+}
+
+.lux-faq-question i {
+  transition: transform 0.4s;
+}
+
+.lux-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: #fff;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.lux-faq-card.active .lux-faq-answer {
+  max-height: 200px; /* điều chỉnh nếu cần */
+  padding: 15px 20px;
+}
+
+.lux-faq-card.active .lux-faq-question i {
+  transform: rotate(180deg);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .lux-faq-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.lux-statistics .lux-counter {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.lux-statistics .lux-stat-item p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #f4d36d;
+    font-weight: 500;
+}
+
+.lux-statistics .lux-stat-item {
+    transition: transform 0.3s ease;
+}
+
+.lux-statistics .lux-stat-item:hover {
+    transform: scale(1.05);
+}
+
+.lux-newsletter .lux-title {
+    font-size: 40px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.lux-newsletter .lux-subtitle {
+    font-size: 18px;
+    color: #f4d36d;
+}
+
+.lux-newsletter-form input[type="email"] {
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 2px solid #f4d36d;
+    width: 300px;
+    max-width: 100%;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.lux-newsletter-form input[type="email"]:focus {
+    box-shadow: 0 0 15px rgba(244,211,109,0.6);
+    border-color: #FFD700;
+}
+
+.lux-newsletter-form button {
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(45deg,#FFD700,#f4d36d);
+    color: #111;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lux-newsletter-form button:hover {
+    box-shadow: 0 0 20px rgba(244,211,109,0.8);
+    transform: translateY(-2px);
+}
+
+.lux-newsletter-form i {
+    vertical-align: middle;}
+
+    .lux-video-demo .lux-title {
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #c49b22, #f4d36d);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.lux-video-demo .lux-subtitle {
+    font-size: 18px;
+    color: #555;
+}
+.container-two-col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.req-left {
+    flex: 1 1 500px;
+}
+
+.req-right {
+    flex: 1 1 500px;
+}
+
+.req-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.req-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.req-icon {
+    font-size: 30px;
+    color: #f4d36d;
+}
+
+.req-text h3 {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.req-text p {
+    color: #555;
+    font-size: 16px;
+}
+
+.btn-yellow {
+    background: linear-gradient(45deg,#FFD700,#FFCC00);
+    color: #111;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-yellow:hover {
+    box-shadow: 0 0 20px rgba(255,215,0,0.7);
+    transform: translateY(-3px);}
