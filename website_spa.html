@@ -23,333 +23,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+       <link rel="stylesheet" href="css/style.css?v=1.1">
     <title>Website Spa - Thẩm mỹ</title>
 
-    <style>
-        :root {
-            --accent: #fdf001;
-            --bg: #f2f2f2;
-            --text: #111;
-            --card: #ffffff;
-            --radius: 12px;
-            --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            --gradient: linear-gradient(135deg, #2b58df, #83b2d1);
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Inter, sans-serif;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        /* BUTTON */
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            border-radius: 8px;
-            font-weight: 600;
-            margin-right: 10px;
-            text-decoration: none;
-            transition: .25s;
-        }
-
-        .btn-yellow {
-            background: var(--accent);
-            color: #000;
-        }
-
-        .btn-dark {
-            background: #000;
-            color: #fff;
-        }
-
-        .btn:hover {
-            opacity: 0.85;
-        }
-
-        /* HERO */
-        .hero-wrapper {
-            width: 100%;
-            background: var(--gradient);
-            padding: 70px 0;
-        }
-
-        .hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            flex-wrap: wrap;
-            color: white;
-        }
-
-        .hero-left,
-        .hero-right {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .hero-right img {
-            width: 100%;
-            border-radius: 12px;
-        }
-
-        /* SECTIONS */
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 32px;
-            color: var(--accent);
-            margin-bottom: 30px;
-        }
-
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        /* CARDS */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            /* Luôn 3 thẻ mỗi hàng */
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 20px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 180px;
-            /* Chiều cao đồng đều */
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: var(--text);
-        }
-
-        /* PROJECTS */
-        .project-card {
-            background: var(--card);
-            border-radius: var(--radius);
-            overflow: hidden;
-            text-decoration: none;
-            color: var(--text);
-            box-shadow: var(--shadow);
-            transition: 0.3s;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .project-card h3 {
-            text-align: center;
-            padding: 15px 0;
-            font-size: 18px;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 1024px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-                /* 2 thẻ trên tablet */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                text-align: center;
-                flex-direction: column;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-                /* 1 thẻ trên mobile */
-            }
-        }
-
-        /*thiết kế web theo yêu cầu*/
-
-        .container-two-col {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 28px;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        .req-left h2 {
-            color: var(--accent);
-            font-size: 30px;
-            margin-bottom: 18px;
-        }
-
-        .req-list {
-            list-style: none;
-            display: grid;
-            gap: 18px;
-            margin-bottom: 22px;
-        }
-
-        .req-list li {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            background: var(--card);
-            padding: 16px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            transition: transform .25s, box-shadow .25s;
-        }
-
-        .req-list li:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-        }
-
-        .req-icon {
-            min-width: 48px;
-            min-height: 48px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            background: linear-gradient(135deg, rgba(255, 204, 0, 0.12), rgba(43, 88, 223, 0.06));
-            color: var(--accent);
-            font-size: 20px;
-        }
-
-        .req-text h3 {
-            font-size: 18px;
-            margin-bottom: 6px;
-        }
-
-        .req-text p {
-            margin: 0;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .req-cta {
-            margin-top: 12px;
-        }
-
-        .req-right img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            display: block;
-            transition: transform .35s;
-        }
-
-        .req-right img:hover {
-            transform: scale(1.02);
-        }
-
-        /* responsive */
-        @media (max-width: 900px) {
-            .container-two-col {
-                grid-template-columns: 1fr;
-            }
-
-            .req-right {
-                order: -1;
-                /* đặt hình trên cùng nếu muốn */
-            }
-        }
-
-
-        .why-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .why-title {
-            font-size: 32px;
-            color: var(--accent);
-            margin-bottom: 32px;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .why-item {
-            background: var(--card);
-            padding: 28px 20px;
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            transition: .25s;
-        }
-
-        .why-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-        }
-
-        .why-icon {
-            font-size: 35px;
-            color: var(--accent);
-            margin-bottom: 12px;
-            display: inline-block;
-        }
-
-        .why-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .why-item p {
-            color: #555;
-            line-height: 1.5;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -376,12 +53,16 @@
                         class="img-fluid" alt="First slide">
                     <div class="carousel-caption">
                         <div class="container carousel-content">
-                            <h4 class="text-white mb-4 animated slideInDown">Thiết kế Website cho Spa - Thẩm mỹ viện</h4>
-                            <h1 class="text-white display-1 mb-4 animated slideInDown">Tạo Website đẹp như <br> dịch vụ của Spa bạn</h1>
+                            <h4 class="text-white mb-4 animated slideInDown">Thiết kế Website cho Spa - Thẩm mỹ viện
+                            </h4>
+                            <h1 class="text-white display-1 mb-4 animated slideInDown">Tạo Website đẹp như <br> dịch vụ
+                                của Spa bạn</h1>
                             <a href="hotro.html" class="me-2"><button type="button"
-                  class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Tư vấn ngay</button></a>
-              <a href="dathang.html" class="me-2"><button type="button"
-                  class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Đặt hàng</button></a>
+                                    class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Tư vấn
+                                    ngay</button></a>
+                            <a href="dathang.html" class="me-2"><button type="button"
+                                    class="px-5 py-3 btn btn-primary border-2 rounded-pill animated slideInDown">Đặt
+                                    hàng</button></a>
                         </div>
                     </div>
                 </div>
@@ -389,188 +70,488 @@
         </div>
     </div>
     <!-- Carousel End -->
+    <!-- GIỚI THIỆU -->
+<section class="spa-gt">
+    <div class="spa-container">
+        <h2 class="spa-title">Thiết kế Website Spa – Thẩm mỹ</h2>
 
-    <!-- ƯU ĐIỂM -->
-    <section>
-        <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Ưu điểm dịch vụ</h1>
-        <div class="cards">
-            <div class="card">
-                <h3>Quản lý đơn hàng dễ dàng</h3>
-                <p>Quản lý trực quan, cập nhật trạng thái tự động.</p>
-            </div>
-            <div class="card">
-                <h3>Thiết kế chuẩn SEO</h3>
-                <p>Tối ưu SEO giúp tăng lượt truy cập tự nhiên.</p>
-            </div>
-            <div class="card">
-                <h3>Responsive hiện đại</h3>
-                <p>Hiển thị đẹp trên mọi thiết bị.</p>
-            </div>
-            <div class="card">
-                <h3>Tích hợp thanh toán</h3>
-                <p>Hỗ trợ nhiều phương thức thanh toán online.</p>
-            </div>
-            <div class="card">
-                <h3>Hỗ trợ đa ngôn ngữ</h3>
-                <p>Tùy chỉnh nhiều ngôn ngữ.</p>
-            </div>
-            <div class="card">
-                <h3>Bảo mật ổn định</h3>
-                <p>Vận hành an toàn 24/7.</p>
-            </div>
+        <p class="spa-desc">
+            Hệ thống <strong>Website Spa – Thẩm mỹ</strong> không chỉ là nơi giới thiệu dịch vụ mà còn là công cụ giúp khách hàng cảm nhận
+            sự uy tín, chuyên nghiệp ngay từ lần đầu truy cập. Giao diện mềm mại, màu sắc thư giãn và hệ thống đặt lịch
+            nhanh chóng sẽ giúp spa của bạn tăng tỷ lệ chuyển đổi và tạo dấu ấn thương hiệu trong lĩnh vực làm đẹp.
+        </p>
+    </div>
+</section>
+<!--Giới thiệu end-->
+
+<!-- Spa Services - Fun Bubble Style -->
+<section class="spa-services-bubble">
+  <div class="spa-container">
+    <h2 class="spa-title">Đặt lịch nhanh – Trải nghiệm chuẩn Spa</h2>
+    <p class="spa-desc">
+      Hệ thống <strong>Booking Online thông minh</strong> cho phép khách hàng chọn dịch vụ, chuyên viên 
+            và thời gian phù hợp chỉ trong vài giây. Mỗi thao tác được tối ưu để tạo nên 
+            <strong>trải nghiệm đặt lịch nhẹ nhàng – cao cấp – tiện lợi</strong> cho cả khách và Spa.
+    </p>
+
+    <div class="spa-bubble-grid">
+      <div class="spa-bubble-item">
+        <span class="bubble-number">01</span>
+        <h3>Đặt lịch 24/7</h3>
+        <p>Khách hàng có thể đặt lịch bất cứ lúc nào, kể cả ngoài giờ làm việc.</p>
+      </div>
+
+      <div class="spa-bubble-item">
+        <span class="bubble-number">02</span>
+        <h3>Xác nhận tự động</h3>
+        <p>Hệ thống gửi thông báo ngay lập tức khi khách đặt lịch thành công.</p>
+      </div>
+
+      <div class="spa-bubble-item">
+        <span class="bubble-number">03</span>
+        <h3>Nhắc lịch thông minh</h3>
+        <p>Giảm tỉ lệ khách quên hẹn với tính năng nhắc lịch tự động.</p>
+      </div>
+
+      <div class="spa-bubble-item">
+        <span class="bubble-number">04</span>
+        <h3>Quản lý lịch hiệu quả</h3>
+        <p>Spa dễ dàng kiểm soát phòng dịch vụ, chuyên viên và khung giờ hoạt động.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Management Text Feature - SPA -->
+<section class="spa-customer-text">
+  <div class="container">
+    <h2 class="spa-title">Quản lý khách hàng & tương tác</h2>
+    <p class="spa-desc">
+      Giải pháp toàn diện giúp bạn quản lý khách hàng, tăng độ tin cậy và nâng cao trải nghiệm người dùng trên website spa của bạn.
+    </p>
+
+    <ul class="spa-feature-list">
+      <li><span class="highlight">Quản lý hồ sơ khách hàng:</span> Lưu trữ đầy đủ thông tin, lịch sử dịch vụ và tương tác.</li>
+      <li><span class="highlight">Theo dõi lịch hẹn:</span> Nhắc nhở tự động, giảm thất lạc và tăng tỷ lệ khách quay lại.</li>
+      <li><span class="highlight">Ưu đãi & khuyến mãi cá nhân:</span> Gửi thông báo riêng theo nhóm khách hàng để tăng sự hài lòng.</li>
+      <li><span class="highlight">Ghi chú & phản hồi:</span> Theo dõi đánh giá và yêu cầu đặc biệt của từng khách hàng.</li>
+      <li><span class="highlight">Tương tác trực tiếp:</span> Chat, thông báo hoặc nhắc nhở đặt lịch ngay trên website.</li>
+      <li><span class="highlight">Báo cáo & thống kê:</span> Biểu đồ trực quan giúp biết khách trung thành, dịch vụ phổ biến.</li>
+      <li><span class="highlight">Bảo mật dữ liệu:</span> Thông tin khách hàng được bảo vệ an toàn, tuân thủ chuẩn bảo mật.</li>
+    </ul>
+  </div>
+</section>
+<!-- Service & Combo Management - SPA -->
+<section class="spa-service-combo">
+  <div class="container">
+    <h2 class="spa-title">Quản lý dịch vụ & gói combo</h2>
+    <p class="spa-desc">
+      Dễ dàng quản lý các dịch vụ riêng lẻ và gói combo, tạo trải nghiệm linh hoạt và tiện lợi cho khách hàng của bạn.
+    </p>
+
+    <ul class="spa-feature-list">
+      <li><span class="highlight">Tạo & chỉnh sửa dịch vụ:</span> Quản lý từng dịch vụ riêng biệt với giá, thời lượng và mô tả chi tiết.</li>
+      <li><span class="highlight">Tùy chỉnh gói combo:</span> Ghép nhiều dịch vụ thành các gói ưu đãi hấp dẫn, tăng giá trị bán hàng.</li>
+      <li><span class="highlight">Quản lý giá & ưu đãi:</span> Thiết lập giá linh hoạt, áp dụng ưu đãi, khuyến mãi theo thời gian.</li>
+      <li><span class="highlight">Đặt lịch trực tiếp cho combo:</span> Cho phép khách đặt toàn bộ gói dịch vụ chỉ với vài click.</li>
+      <li><span class="highlight">Theo dõi hiệu quả:</span> Xem thống kê gói dịch vụ nào được ưa chuộng, tối ưu chiến lược kinh doanh.</li>
+      <li><span class="highlight">Tích hợp thanh toán:</span> Cho phép khách thanh toán online hoặc tại spa, tiện lợi và nhanh chóng.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- SPA Featured Projects -->
+<section class="spa-projects">
+  <div class="container">
+    <h2 class="spa-title">Một số dự án nổi bật</h2>
+    <p class="spa-desc">
+      Chúng tôi đã thiết kế nhiều website SPA chuyên nghiệp, mang lại trải nghiệm người dùng tuyệt vời và quản lý dễ dàng.
+    </p>
+
+    <div class="spa-project-grid">
+      <div class="spa-project-item">
+        <img src="https://sotagroup.vn/upload/news/screencapture-dienlanhgiahien-vn-2025-11-19-165050-9009.jpg" alt="Website điện lạnh">
+        <div class="spa-project-info">
+          <h3>Thiết kế Website điện lạnh</h3>
         </div>
-    </section>
+      </div>
+      <div class="spa-project-item">
+        <img src="https://sotagroup.vn/upload/news/3screencapture-thoitrang11-muathemewp-2023-02-22-170038-9573-6543.jpg" alt="Website thời trang">
+        <div class="spa-project-info">
+          <h3>Thiết kế Website thời trang</h3>
+        </div>
+      </div>
+      <div class="spa-project-item">
+        <img src="https://sotagroup.vn/upload/news/37027033510171264995177856081534905627552288n-1068.jpg" alt="Website nội thất">
+        <div class="spa-project-info">
+          <h3>Thiết kế Website nội thất</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- DỰ ÁN -->
-    <!-- Project Start -->
+<!-- SPA CTA - Contact / Consult -->
+<section class="spa-cta">
+  <div class="container">
+    <h2 class="spa-cta-title">Tư vấn & Đặt lịch ngay hôm nay</h2>
+    <p class="spa-cta-desc">
+      Chúng tôi sẵn sàng giúp bạn sở hữu một website spa chuyên nghiệp, quản lý dễ dàng và thu hút khách hàng.
+      Đừng chờ nữa, hãy để chuyên gia của chúng tôi hỗ trợ bạn ngay!
+    </p>
+    <a href="hotro.html" class="spa-cta-btn">Liên hệ & Tư vấn</a>
+  </div>
+</section>
+
+   <!-- pricing Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
-                <h1 class="display-5">Các dự án nổi bật</h1>
+                <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Bảng giá
+                </h5>
+                <h1 class="display-5 w-50 mx-auto">Báo giá dịch vụ thiết kế website</h1>
             </div>
             <div class="row g-5">
-                <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="project-item">
-                        <div class="project-left bg-dark"></div>
-                        <div class="project-right bg-dark"></div>
-                        <img src="https://sotagroup.vn/upload/news/screencapture-dienlanhgiahien-vn-2025-11-19-165050-9009.jpg"
-                            class="img-fluid h-100" alt="img">
-                        <a href="" class="fs-4 fw-bold text-center">Thiết kế Website điện lạnh</a>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-primary py-3 px-5 text-center rounded-top border-bottom border-dark">
+                            <h2 class="m-0">Cơ bản</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST1 - 20/100</span></h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng
+                                và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
+                            <a href="hotro.html"><button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư vấn
+                                ngay</button></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="project-item">
-                        <div class="project-left bg-dark"></div>
-                        <div class="project-right bg-dark"></div>
-                        <img src="https://sotagroup.vn/upload/news/3screencapture-thoitrang11-muathemewp-2023-02-22-170038-9573-6543.jpg"
-                            class="img-fluid h-100" alt="img">
-                        <a href="" class="fs-4 fw-bold text-center">Thiết kế Website thời trang</a>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".5s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-dark py-3 px-5 text-center rounded-top border-bottom border-primary">
+                            <h2 class="m-0 text-primary">Tiêu chuẩn</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-dark pricing-label pricing-featured mb-2">
+                            <h1 class="mb-0 text-primary"><span class="fs-5 fw-normal">WEB ST2 - 70/100</span></h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng
+                                và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-times text-danger me-2"></i>Hướng dẫn quản trị</p>
+                            <a href="hotro.html"><button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư vấn
+                                ngay</button></a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-xxl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="project-item">
-                        <div class="project-left bg-dark"></div>
-                        <div class="project-right bg-dark"></div>
-                        <img src="https://sotagroup.vn/upload/news/37027033510171264995177856081534905627552288n-1068.jpg"
-                            class="img-fluid h-100" alt="img">
-                        <a href="" class="fs-4 fw-bold text-center">Thiết kế Website nội thất</a>
+                <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".7s">
+                    <div class="rounded bg-light pricing-item">
+                        <div class="bg-primary py-3 px-5 text-center rounded-top border-bottom border-dark">
+                            <h2 class="m-0">Nâng cao</h2>
+                        </div>
+                        <div class="px-4 py-5 text-center bg-primary pricing-label mb-2">
+                            <h1 class="mb-0"><span class="text-secondary fs-5 fw-normal">WEB ST3 - 80/100</span></h1>
+                        </div>
+                        <div class="p-4 text-center fs-5">
+                            <p><i class="fa fa-check text-success me-2"></i>Thiết kế chuẩn UI/UX - giao diện người dùng
+                                và trải nghiệm người dùng</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hỗ trợ kỹ thuật 24/7l</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bảo hành và bảo trì vĩnh viễn</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Bàn giao mã nguồn (source code)</p>
+                            <p><i class="fa fa-check text-success me-2"></i>Hướng dẫn quản trị</p>
+                            <a href="hotro.html"><button type="button" class="btn btn-primary border-0 rounded-pill px-4 py-3 mt-3">Tư vấn
+                                ngay</button></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Project End -->
-
-    <!-- THIẾT KẾ THEO YÊU CẦU -->
-    <section class="custom-request fade-in" aria-labelledby="req-title" style="padding-bottom:60px;">
-        <div class="container-two-col">
-            <div class="req-left">
-                <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Website theo yêu cầu</h1>
-
-                <ul class="req-list" role="list">
-                    <li>
-                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-crown"></i></span>
-                        <div class="req-text">
-                            <h3>Thiết kế độc quyền</h3>
-                            <p>Giao diện thiết kế riêng theo thương hiệu, không trùng lặp — đảm bảo nhận diện rõ ràng và
-                                chuyên nghiệp.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-gear"></i></span>
-                        <div class="req-text">
-                            <h3>Chức năng theo yêu cầu</h3>
-                            <p>Phát triển tính năng theo quy trình kinh doanh của bạn: booking, quản lý, tích hợp API,
-                                hệ thống thành viên, v.v.</p>
-                        </div>
-                    </li>
-
-                    <li>
-                        <span class="req-icon" aria-hidden="true"><i class="fa-solid fa-headset"></i></span>
-                        <div class="req-text">
-                            <h3>Đội ngũ lập trình hỗ trợ 24/7</h3>
-                            <p>Hỗ trợ kỹ thuật nhanh, sửa lỗi, và tư vấn nâng cấp liên tục — đồng hành cùng doanh nghiệp
-                                của bạn.</p>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="req-cta" style="text-align: center;">
-                    <a href="lienhe.html" class="btn btn-yellow">Yêu cầu tư vấn</a>
-                    <a href="demo.html" class="btn btn-dark">Xem demo</a>
-                </div>
+    <!-- Pricing End -->
+ <!-- Blog / Kiến thức Mosaic Start -->
+    <section class="lux-blog-mosaic py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="lux-title"><span>Blog & Kiến thức</span></h2>
+                <p class="lux-subtitle">Tips, mẹo & kiến thức về website, SEO, marketing</p>
             </div>
 
-            <div class="req-right" role="img" aria-label="Ví dụ thiết kế website theo yêu cầu">
-                <img src="https://sotagroup.vn/upload/elfinder/content/dich-vu-thiet--ke-website-theo-yeu-cau.jpg"
-                    alt="Ví dụ thiết kế website theo yêu cầu" loading="lazy">
-            </div>
-        </div>
-    </section>
+            <div class="lux-mosaic-grid">
 
+                <a href="blog.html" class="lux-mosaic-card"
+                    style="grid-row: span 2; background-image:url('https://techvccloud.mediacdn.vn/280518386289090560/2023/6/26/tool-tang-traffic-8-1687772217518112022818-25-158-471-952-crop-1687772228035681623717.png');">
+                    <div class="lux-mosaic-info">
+                        <h3>5 mẹo SEO giúp website tăng traffic</h3>
+                        <p>Tối ưu Google, thu hút khách tiềm năng và tăng doanh thu.</p>
+                    </div>
+                </a>
 
-    <!-- BẮT ĐẦU: Lý Do Bạn Nên Chọn Chúng Tôi -->
-    <section class="why-choose fade-in" aria-labelledby="why-title" style="padding:60px 20px;">
-        <div class="why-container">
-            <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Lý do bạn nên chọn chúng tôi
-            </h1>
+                <a href="blog.html" class="lux-mosaic-card"
+                    style="background-image:url('https://gobranding.com.vn/wp-content/uploads/2018/10/chien-luoc-marketing-online-cho-cong-ty-vua-va-nho-1.jpg');">
+                    <div class="lux-mosaic-info">
+                        <h3>Chiến lược marketing online cho doanh nghiệp nhỏ</h3>
+                    </div>
+                </a>
 
-            <div class="why-grid">
+                <a href="blog.html" class="lux-mosaic-card"
+                    style="grid-row: span 2; background-image:url('https://southteam.vn/wp-content/uploads/2020/07/T%E1%BA%A1i-sao-b%E1%BA%A1n-c%E1%BA%A7n-thi%E1%BA%BFt-k%E1%BA%BF-website-cho-doanh-nghi%E1%BB%87p-tr%E1%BB%8Dn-g%C3%B3i-2-1024x683.jpg');">
+                    <div class="lux-mosaic-info">
+                        <h3>Thiết kế website chuyên nghiệp cho doanh nghiệp</h3>
+                    </div>
+                </a>
 
-                <div class="why-item">
-                    <span class="why-icon"><i class="fa-solid fa-users-gear"></i></span>
-                    <h3>Đội ngũ giàu kinh nghiệm</h3>
-                    <p>Hỗ trợ nhanh, tư vấn chính xác — xử lý mọi yêu cầu kỹ thuật 24/7.</p>
-                </div>
+                <a href="blog.html" class="lux-mosaic-card"
+                    style="background-image:url('https://minhduongads.com/wp-content/uploads/2023/11/thiet-ke-ux-ui-1.jpg');">
+                    <div class="lux-mosaic-info">
+                        <h3>Mẹo UX/UI tăng trải nghiệm người dùng</h3>
+                    </div>
+                </a>
 
-                <div class="why-item">
-                    <span class="why-icon"><i class="fa-solid fa-laptop-code"></i></span>
-                    <h3>Giao diện đẹp – tối ưu đa thiết bị</h3>
-                    <p>Thiết kế hiện đại, load nhanh, chuẩn SEO và hiển thị tốt trên mọi màn hình.</p>
-                </div>
-
-                <div class="why-item">
-                    <span class="why-icon"><i class="fa-solid fa-shield-halved"></i></span>
-                    <h3>Mã nguồn sạch – bảo mật cao</h3>
-                    <p>Dễ nâng cấp, dễ mở rộng – đảm bảo an toàn dữ liệu tuyệt đối.</p>
-                </div>
-
-                <div class="why-item">
-                    <span class="why-icon"><i class="fa-solid fa-tags"></i></span>
-                    <h3>Giá tốt – rõ ràng – không phát sinh</h3>
-                    <p>Báo giá minh bạch, đúng nhu cầu – không phí ẩn, không rủi ro.</p>
-                </div>
+                <a href="https://www.navee.asia/kb/huong-dan-cach-thiet-lap-chien-luoc-noi-dung-website/"
+                    class="lux-mosaic-card"
+                    style="background-image:url('https://storage.googleapis.com/stateless.navee.asia/2020/06/314162b5-xac-dinh-ro-muc-tieu-hieu-qua-cua-noi-dung-website.png');">
+                    <div class="lux-mosaic-info">
+                        <h3>Chiến lược nội dung hấp dẫn cho website</h3>
+                    </div>
+                </a>
 
             </div>
         </div>
     </section>
+    <!-- Blog / Kiến thức Mosaic End -->
+    <!-- FAQs Start -->
+    <section class="lux-faqs py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="lux-title"><span>Câu hỏi thường gặp</span></h2>
+                <p class="lux-subtitle">Giải đáp nhanh mọi thắc mắc về dịch vụ thiết kế website doanh nghiệp</p>
+            </div>
 
-    <!-- GÓI DỊCH VỤ -->
-    <section>
-        <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Các gói dịch vụ</h1>
-        <div class="cards">
-            <div class="card">
-                <h3>GÓI CƠ BẢN</h3>
-                <p>Dành cho doanh nghiệp nhỏ.</p>
-            </div>
-            <div class="card">
-                <h3>GÓI TIÊU CHUẨN</h3>
-                <p>Đầy đủ chức năng bán hàng.</p>
-            </div>
-            <div class="card">
-                <h3>GÓI NÂNG CAO</h3>
-                <p>Tối ưu SEO & chuyển đổi.</p>
+            <div class="lux-faq-grid">
+
+                <div class="lux-faq-card">
+                    <div class="lux-faq-question">
+                        <span>1. Bao lâu thì website hoàn thành?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="lux-faq-answer">
+                        <p>Thông thường từ 7-14 ngày tùy vào gói dịch vụ và yêu cầu đặc thù của khách hàng.</p>
+                    </div>
+                </div>
+
+                <div class="lux-faq-card">
+                    <div class="lux-faq-question">
+                        <span>2. Tôi có thể chỉnh sửa website sau khi bàn giao không?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="lux-faq-answer">
+                        <p>Hoàn toàn có thể! Chúng tôi hướng dẫn quản trị và hỗ trợ bảo trì lâu dài.</p>
+                    </div>
+                </div>
+
+                <div class="lux-faq-card">
+                    <div class="lux-faq-question">
+                        <span>3. Gói nào phù hợp cho doanh nghiệp nhỏ?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="lux-faq-answer">
+                        <p>Gói Cơ bản hoặc Tiêu chuẩn thường đủ cho doanh nghiệp nhỏ, tiết kiệm chi phí mà vẫn chuyên
+                            nghiệp.</p>
+                    </div>
+                </div>
+
+                <div class="lux-faq-card">
+                    <div class="lux-faq-question">
+                        <span>4. Website có chuẩn SEO không?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="lux-faq-answer">
+                        <p>100% chuẩn SEO cơ bản, hỗ trợ tối ưu hóa từ khóa, tốc độ tải và trải nghiệm người dùng.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
+    <!-- FAQs End -->
+    <!-- Blog Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Đối tác của Sota</span>
+                    </h2>
+                </div>
+            </div>
 
-    <!-- LIÊN HỆ -->
-    <section style="text-align:center; margin-bottom: 70px;">
-        <h1 class="display-5 mb-2" style="text-align: center; padding-bottom: 20px;">Liên hệ đặt hàng</h1>
-        <p>Liên hệ ngay để được tư vấn giải pháp phù hợp...</p>
-        <a href="lienhe.html" class="btn btn-yellow">Liên hệ ngay</a>
-    </section>
+            <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay=".5s">
 
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/iconslogo-01-1-5088-66500.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-10-coteccons-1-21420.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-12-deoca-28480.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-18-austdoor-98060.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-21-fecon-68280.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/khach-hang-cua-sao-kim-24-uni-president-84450.png"
+                        alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/logo-8sangbds-7313.png" alt="">
+                </div>
+
+                <div class="blog-item">
+                    <img src="https://sotagroup.vn/upload/photo/18805163-6921-6122.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+    <!-- Testiminial Start -->
+    <div class="container-fluid testimonial py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+                <div class="text-center">
+                    <h2 class="lux-title">
+                        <span>Cảm nhận của khách hàng</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay=".5s">
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-content rounded mb-4 p-4">
+                        <p class="fs-5 m-0">Các tính năng đòi hỏi độ khó và phức tạp cao Sota đều làm rất tỉ mỉ và
+                            chính xác cao một cách hoàn hảo.</p>
+                    </div>
+                    <div class="d-flex align-items-center  mb-4" style="padding: 0 0 0 25px;">
+                        <div class="position-relative">
+                            <img src="https://sotagroup.vn/thumbs/100x100x1/upload/news/z49874497373673b8c49b99a0534f7779ac12a67d9475e-3054.jpg"
+                                class="img-fluid rounded-circle py-2" alt="">
+                            <div class="position-absolute" style="top: 33px; left: -25px;">
+                                <i class="fa fa-quote-left rounded-pill bg-primary text-dark p-3"></i>
+                            </div>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-0">Bác sĩ Kiều</h4>
+                            <p class="mb-1">Profession</p>
+                            <div class="d-flex">
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                                <small class="fas fa-star text-primary me-1"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testiminial End -->
     <!-- FOOTER -->
     <div id="footer"></div>
     <script>
@@ -578,7 +559,7 @@
             .then(res => res.text())
             .then(html => document.getElementById("footer").innerHTML = html);
     </script>
- <!-- JavaScript Libraries -->
+    <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -586,7 +567,7 @@
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
- <!--tuyết rới-->
+    <!--tuyết rới-->
     <img id="santa" src="https://clipart-library.com/2024/picture-of-cartoon-santa/picture-of-cartoon-santa-3.png"
         alt="Santa Claus">
     <canvas id="snowCanvas"></canvas>
@@ -681,6 +662,47 @@
     </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+      <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        const faqs = document.querySelectorAll('.lux-faq-card');
+
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+<script>
+        const filterBtns = document.querySelectorAll('.project-filter');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // active class
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+       <!-- CTA Fixed Start -->
+    <a href="hotro.html" class="lux-cta-btn">
+        <i class="fa fa-comments me-2"></i> Tư vấn ngay
+    </a>
+    <!-- CTA Fixed End -->
 </body>
 
 </html>
